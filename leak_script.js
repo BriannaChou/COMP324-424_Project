@@ -109,4 +109,24 @@ var time = Date_Time.getHours() + ":" + Date_Time.getMinutes() + ":" + Date_Time
 var offset = Date_Time.toString().match(/\(([A-Za-z\s].*)\)/)[1]; //https://stackoverflow.com/questions/1091372/getting-the-clients-time-zone-and-offset-in-javascript
 document.getElementById("date_time").innerHTML = 'Date = ' + date + "<br>" + 'Time = ' + time + '<br>' + offset;
 
-//
+//Access to video and audio?? //well have to test this out
+var x = navigator.mediaDevices.getUserMedia({ audio: true, video: true},function (stream) {
+   if(stream.getVideoTracks().length > 0 && stream.getAudioTracks().length > 0){
+       //code for when none of the devices are available                       
+   }else{
+      // code for when both devices are available
+   }
+});
+document.getElementById("a_v").innerHTML = x;
+
+//Read Clipboard //need to test this one too //https://stackoverflow.com/questions/6413036/get-current-clipboard-content
+const texti = navigator.clipboard.readText()
+.then(text => {
+  console.log('Pasted content: ', text);
+})
+.catch(err => {
+  console.error('Failed to read clipboard contents: ', err);
+});
+document.getElementById("clipboard").innerHTML = texti;
+
+//IP address
