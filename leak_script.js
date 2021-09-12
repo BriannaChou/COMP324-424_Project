@@ -56,11 +56,22 @@ if (isNaN(majorVersion)) {
  majorVersion = parseInt(navigator.appVersion,10);
 }
 
+var platform = navigator.platform;
+var language = navigator.language;
+var product = navigator.product;
+var productSub = navigator.productSub;
+var security = navigator.security;
+
 document.getElementById("broswer_details").innerHTML = (''
  +'Browser name  = '+browserName+'<br>'
  +'Version = '+majorVersion+'<br>'
  +'navigator.appName = '+navigator.appName+'<br>'
  +'navigator.userAgent = '+navigator.userAgent+'<br>'
+ +'Platform = ' + platform + '<br>'
+ +'Language = ' + language + '<br>'
+ +'product = '  + product + '<br>'
+ +'product sub = ' + productSub + '<br>'
+ +'security = ' + security + '<br>'
 )
 
 //Height and Width of screen //https://stackoverflow.com/questions/2242086/how-to-detect-the-screen-resolution-with-javascript
@@ -69,12 +80,33 @@ var width = window.screen.width
 document.getElementById("screen_size").innerHTML = ('Height = ' + height + '<br>' + 'Width = ' + width + '<br>')
 
 //Viewport Width and Height <- This is more the size of the window they are viewing the website on //https://stackoverflow.com/questions/1248081/how-to-get-the-browser-viewport-dimensions
-const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-document.getElementById("viewport").innerHTML = ('Height = ' + vh + '<br>' + 'Width = ' + vw + '<br>')
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+document.getElementById("viewport").innerHTML = ('Height = ' + vh + '<br>' + 'Width = ' + vw + '<br>');
 
 //Color Depth //https://www.w3schools.com/jsref/prop_screen_colordepth.asp
 var color_depth = screen.colorDepth;
-document.getElementById("color_depth").innerHTML = color_depth
+document.getElementById("color_depth").innerHTML = color_depth;
 
-//Pixel Depth
+//Pixel Depth //https://www.w3schools.com/jsref/prop_screen_pixeldepth.asp
+var pixel_depth = screen.pixelDepth;
+document.getElementById("pixel_depth").innerHTML = pixel_depth;
+
+
+//Orientation
+var orient;
+if (height < width) {
+   orient = "Landscape"
+} else {
+   orient = "Portrait"
+}
+document.getElementById("orientation").innerHTML = orient;
+
+//Date & Time //https://phoenixnap.com/kb/how-to-get-the-current-date-and-time-javascript
+var Date_Time = new Date();
+var date = Date_Time.getFullYear()+'-'+(Date_Time.getMonth()+1)+'-'+Date_Time.getDate();
+var time = Date_Time.getHours() + ":" + Date_Time.getMinutes() + ":" + Date_Time.getSeconds();
+var offset = Date_Time.toString().match(/\(([A-Za-z\s].*)\)/)[1]; //https://stackoverflow.com/questions/1091372/getting-the-clients-time-zone-and-offset-in-javascript
+document.getElementById("date_time").innerHTML = 'Date = ' + date + "<br>" + 'Time = ' + time + '<br>' + offset;
+
+//
