@@ -7,7 +7,6 @@ document.getElementById("timezone").innerHTML = tz; //prints timezone
 var nVer = navigator.appVersion;
 var nAgt = navigator.userAgent;
 var browserName  = navigator.appName;
-var fullVersion  = ''+parseFloat(navigator.appVersion); 
 var majorVersion = parseInt(navigator.appVersion,10);
 var nameOffset,verOffset,ix;
 
@@ -50,11 +49,6 @@ else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) <
   browserName = navigator.appName;
  }
 }
-// trim the fullVersion string at semicolon/space if present
-if ((ix=fullVersion.indexOf(";"))!=-1)
-   fullVersion=fullVersion.substring(0,ix);
-if ((ix=fullVersion.indexOf(" "))!=-1)
-   fullVersion=fullVersion.substring(0,ix);
 
 majorVersion = parseInt(''+fullVersion,10);
 if (isNaN(majorVersion)) {
@@ -64,8 +58,14 @@ if (isNaN(majorVersion)) {
 
 document.getElementById("broswer_details").innerHTML = (''
  +'Browser name  = '+browserName+'<br>'
- +'Full version  = '+fullVersion+'<br>'
- +'Major version = '+majorVersion+'<br>'
+ +'Version = '+majorVersion+'<br>'
  +'navigator.appName = '+navigator.appName+'<br>'
  +'navigator.userAgent = '+navigator.userAgent+'<br>'
 )
+
+//Height and Width of screen
+var height = window.screen.height;
+var width = window.screen.width
+document.getElementById("screen_size").innerHTML = ('Height = ' + height + '<br>' + 'Width = ' + width + '<br>')
+
+//
