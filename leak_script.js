@@ -63,9 +63,18 @@ document.getElementById("broswer_details").innerHTML = (''
  +'navigator.userAgent = '+navigator.userAgent+'<br>'
 )
 
-//Height and Width of screen
+//Height and Width of screen //https://stackoverflow.com/questions/2242086/how-to-detect-the-screen-resolution-with-javascript
 var height = window.screen.height;
 var width = window.screen.width
 document.getElementById("screen_size").innerHTML = ('Height = ' + height + '<br>' + 'Width = ' + width + '<br>')
 
-//
+//Viewport Width and Height <- This is more the size of the window they are viewing the website on //https://stackoverflow.com/questions/1248081/how-to-get-the-browser-viewport-dimensions
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
+document.getElementById("viewport").innerHTML = ('Height = ' + vh + '<br>' + 'Width = ' + vw + '<br>')
+
+//Color Depth //https://www.w3schools.com/jsref/prop_screen_colordepth.asp
+var color_depth = screen.colorDepth;
+document.getElementById("color_depth").innerHTML = color_depth
+
+//Pixel Depth
