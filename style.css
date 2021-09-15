@@ -1,0 +1,35 @@
+/* For the Web Detective*/
+h1{
+    text-align: center;
+}
+
+/* For the nav bar */
+header{
+    height:100px;
+    font-family: sans-serif;
+    margin-top: 80px;
+    padding: 30px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+}
+
+
+header li {
+    margin: 20px;
+}
+
+header li a {
+    color: black;
+    text-decoration: none;
+}
+
+header img{
+    height: 80px;
+}
