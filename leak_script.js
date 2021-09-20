@@ -137,24 +137,3 @@ document.body.addEventListener("mousemove", (event) => {
 
 document.getElementById("X").innerHTML = sampleEle;
 
-//IP Address tracking
-/*
-var ip_string = ""
-function json(url) {
-return fetch(url).then(res => res.json());
-}
-
-let apiKey = 'c11e03c1d3f6ac4e67c9df20df3f36dc41885f031dd9b25a0b431e0f';
-json(`https://api.ipdata.co?api-key=${apiKey}`).then(data => {
-console.log(data.ip);
-console.log(data.city);
-console.log(data.country_code);
-ip_string = data.ip + data.city + data.country_code;
-
-// so many more properties
-});
-*/
-//https://docs.ipdata.co/api-reference/jsonp
-$.get("https://api.ipdata.co?api-key=c11e03c1d3f6ac4e67c9df20df3f36dc41885f031dd9b25a0b431e0f", function (response) {
-	$("#response").html(JSON.stringify(response, null, 4));
-}, "jsonp");
