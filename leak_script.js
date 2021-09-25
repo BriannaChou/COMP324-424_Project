@@ -254,8 +254,29 @@ button.addEventListener("click", () => {
   });
 });
 
-//Mouse Tracking //need to test this // https://www.tutorialspoint.com/javascript-focus
-var pointerX = -1;
+//Mouse Tracking //need to test this //https://www.codegrepper.com/code-examples/javascript/how+to+track+mouse+movement+in+javascript
+var myX, myY, xyOn, myMouseX, myMouseY;
+xyOn = true;
+
+function getXYPosition(e) {
+    myMouseX = (e || event).clientX;
+    myMouseY = (e || event).clientY;
+    if (document.documentElement.scrollTop > 0) {
+        myMouseY = myMouseY + document.documentElement.scrollTop;
+    }
+    if (xyOn) {
+        alert("X is " + myMouseX + "\nY is " + myMouseY);
+        document.getElementById("X").innerHTML = "X is " + myMouseX + "\nY is " + myMouseY;
+    }
+}
+function toggleXY() {
+    xyOn = !xyOn;
+    document.getElementById('xyLink').blur();
+    return false;
+}   
+
+document.onmouseup = getXYPosition;
+/*var pointerX = -1;
 var pointerY = -1;
 document.onmousemove = function(event) {
 	pointerX = event.pageX;
@@ -267,6 +288,7 @@ function pointerCheck() {
    document.getElementById("X").innerHTML = 'Cursor at: '+pointerX+', '+pointerY;
 }
 document.getElementById("X").innerHTML = mousePos;
+*/
 //IP Address
 window.onload = function () {
    var script = document.createElement("script");
