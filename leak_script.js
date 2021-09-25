@@ -265,7 +265,7 @@ function getXYPosition(e) {
         myMouseY = myMouseY + document.documentElement.scrollTop;
     }
     if (xyOn) {
-        alert("X is " + myMouseX + "\nY is " + myMouseY);
+        //alert("X is " + myMouseX + "\nY is " + myMouseY);
         document.getElementById("X").innerHTML = "X is " + myMouseX + "\nY is " + myMouseY;
     }
 }
