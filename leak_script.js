@@ -263,7 +263,6 @@ document.body.addEventListener("mousemove", (event) => {
 document.getElementById("X").innerHTML = sampleEle;
 
 //IP Address
-/*
 window.onload = function () {
    var script = document.createElement("script");
    script.type = "text/javascript";
@@ -273,8 +272,3 @@ window.onload = function () {
 function DisplayIP(response) {
    document.getElementById("ipaddress").innerHTML = "Your IP Address is " + response.ip;
 } 
-*/
-$.get("https://api.ipdata.co?api-key=test", function(response) {
-    console.log(response.ip);
-    document.getElementById("ipaddress").innerHTML = response.ip;
-}, "jsonp");
