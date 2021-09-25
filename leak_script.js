@@ -260,7 +260,6 @@ button.addEventListener("click", () => {
 
    document.onmousemove = handleMouseMove;
    setInterval(getMousePosition, 100); // setInterval repeats every X ms
-   document.getElementById("X").innerHTML = mousePos;
    function handleMouseMove(event) {
        var dot, eventDoc, doc, body, pageX, pageY;
 
@@ -298,7 +297,7 @@ button.addEventListener("click", () => {
    }
    
 })();
-
+document.getElementById("X").innerHTML = mousePos;
 //IP Address
 window.onload = function () {
    var script = document.createElement("script");
