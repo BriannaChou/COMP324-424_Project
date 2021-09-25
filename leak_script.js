@@ -138,6 +138,9 @@ document.body.addEventListener("mousemove", (event) => {
 document.getElementById("X").innerHTML = sampleEle;
 
 //IP Address
-$.get("https://api.ipdata.co?api-key=test", function (response) {
-	$("#response").html(JSON.stringify(response, null, 4));
-}, "jsonp");
+$.getJSON("https://api.ipify.org?format=json",
+function(data) {
+
+// Setting text of element P with id gfg
+$("#response").html(data.ip);
+})
