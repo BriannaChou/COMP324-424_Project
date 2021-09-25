@@ -138,9 +138,12 @@ document.body.addEventListener("mousemove", (event) => {
 document.getElementById("X").innerHTML = sampleEle;
 
 //IP Address
-$.getJSON("https://api.ipify.org?format=json",
-function(data) {
-
-// Setting text of element P with id gfg
-$("#response").html(data.ip);
-})
+window.onload = function () {
+   var script = document.createElement("script");
+   script.type = "text/javascript";
+   script.src = "https://api.ipify.org?format=jsonp&callback=DisplayIP";
+   document.getElementsByTagName("head")[0].appendChild(script);
+};
+function DisplayIP(response) {
+   document.getElementById("ipaddress").innerHTML = "Your IP Address is " + response.ip;
+} 
