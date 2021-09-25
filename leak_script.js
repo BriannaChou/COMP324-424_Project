@@ -120,22 +120,8 @@ var x = navigator.mediaDevices.getUserMedia({ audio: true, video: true},function
 document.getElementById("a_v").innerHTML = x;
 
 //Read Clipboard //need to test this one too //https://stackoverflow.com/questions/6413036/get-current-clipboard-content
-// get reference to paragraph
-const paragraph = document.getElementById("textSpace");
-
-// get reference to the button
-const button = document.getElementById("btn");
-
-// add click event handler to the button
-// so that after clicking the button
-// the copied text will be displayed in the paragraph tag
-button.addEventListener("click", () => {
-  // copy the text from clipboard
-  navigator.clipboard.readText().then((copiedText) => {
-    paragraph.innerText = copiedText;
-  });
-});
-
+var you = navigator.clipboard.readText().then(text => outputElem.innerText = text);
+document.getElementById("clipboard").innerHTML = you;
 
 //Mouse Tracking //need to test this // https://www.tutorialspoint.com/javascript-focus
 let sampleEle = document.querySelector(".sample");
