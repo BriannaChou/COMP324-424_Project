@@ -120,9 +120,12 @@ var x = navigator.mediaDevices.getUserMedia({ audio: true, video: true},function
 document.getElementById("a_v").innerHTML = x;
 
 //Read Clipboard //need to test this one too //https://stackoverflow.com/questions/6413036/get-current-clipboard-content
-var promise = navigator.clipboard.read();
-
-document.getElementById("clipboard").innerText = promise;
+document.querySelector('[contenteditable]').addEventListener('paste', (e) => {
+   e.preventDefault();
+   const text = (e.originalEvent || e).clipboardData.getData('text/plain');
+   window.document.execCommand('insertText', false, text);
+});
+document.getElementById("clipboard").innerHTML = text;
 
 //Mouse Tracking //need to test this // https://www.tutorialspoint.com/javascript-focus
 let sampleEle = document.querySelector(".sample");
