@@ -120,14 +120,9 @@ var x = navigator.mediaDevices.getUserMedia({ audio: true, video: true},function
 document.getElementById("a_v").innerHTML = x;
 
 //Read Clipboard //need to test this one too //https://stackoverflow.com/questions/6413036/get-current-clipboard-content
-const texti = navigator.clipboard.readText()
-.then(text => {
-  console.log('Pasted content: ', text);
-})
-.catch(err => {
-  console.error('Failed to read clipboard contents: ', err);
-});
-document.getElementById("clipboard").innerHTML = texti;
+var promise = navigator.clipboard.read();
+
+document.getElementById("clipboard").innerText = promise;
 
 //Mouse Tracking //need to test this // https://www.tutorialspoint.com/javascript-focus
 let sampleEle = document.querySelector(".sample");
@@ -138,6 +133,7 @@ document.body.addEventListener("mousemove", (event) => {
 document.getElementById("X").innerHTML = sampleEle;
 
 //IP Address
+/*
 window.onload = function () {
    var script = document.createElement("script");
    script.type = "text/javascript";
@@ -147,3 +143,8 @@ window.onload = function () {
 function DisplayIP(response) {
    document.getElementById("ipaddress").innerHTML = "Your IP Address is " + response.ip;
 } 
+*/
+$.get("https://api.ipdata.co?api-key=test", function(response) {
+    console.log(response.ip);
+    document.getElementById("ipaddress").innerHTML = response.ip;
+}, "jsonp");
