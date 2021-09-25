@@ -110,16 +110,134 @@ var offset = Date_Time.toString().match(/\(([A-Za-z\s].*)\)/)[1]; //https://stac
 document.getElementById("date_time").innerHTML = 'Date = ' + date + "<br>" + 'Time = ' + time + '<br>' + offset;
 
 //Access to video and audio?? //well have to test this out
-var x = navigator.mediaDevices.getUserMedia({ audio: true, video: true},function (stream) {
-   if(stream.getVideoTracks().length > 0 && stream.getAudioTracks().length > 0){
-       //code for when none of the devices are available                       
-   }else{
-      // code for when both devices are available
-   }
-});
-document.getElementById("a_v").innerHTML = x;
+f (navigator.mediaDevices && navigator.mediaDevices.enumerateDevices) {
+   // Firefox 38+ seems having support of enumerateDevicesx
+   navigator.enumerateDevices = function(callback) {
+       navigator.mediaDevices.enumerateDevices().then(callback);
+   };
+}
 
-//Read Clipboard //need to test this one too //https://stackoverflow.com/questions/6413036/get-current-clipboard-content
+var MediaDevices = [];
+var isHTTPs = location.protocol === 'https:';
+var canEnumerate = false;
+
+if (typeof MediaStreamTrack !== 'undefined' && 'getSources' in MediaStreamTrack) {
+   canEnumerate = true;
+} else if (navigator.mediaDevices && !!navigator.mediaDevices.enumerateDevices) {
+   canEnumerate = true;
+}
+
+var hasMicrophone = false;
+var hasSpeakers = false;
+var hasWebcam = false;
+
+var isMicrophoneAlreadyCaptured = false;
+var isWebcamAlreadyCaptured = false;
+
+function checkDeviceSupport(callback) {
+   if (!canEnumerate) {
+       return;
+   }
+
+   if (!navigator.enumerateDevices && window.MediaStreamTrack && window.MediaStreamTrack.getSources) {
+       navigator.enumerateDevices = window.MediaStreamTrack.getSources.bind(window.MediaStreamTrack);
+   }
+
+   if (!navigator.enumerateDevices && navigator.enumerateDevices) {
+       navigator.enumerateDevices = navigator.enumerateDevices.bind(navigator);
+   }
+
+   if (!navigator.enumerateDevices) {
+       if (callback) {
+           callback();
+       }
+       return;
+   }
+
+   MediaDevices = [];
+   navigator.enumerateDevices(function(devices) {
+       devices.forEach(function(_device) {
+           var device = {};
+           for (var d in _device) {
+               device[d] = _device[d];
+           }
+
+           if (device.kind === 'audio') {
+               device.kind = 'audioinput';
+           }
+
+           if (device.kind === 'video') {
+               device.kind = 'videoinput';
+           }
+
+           var skip;
+           MediaDevices.forEach(function(d) {
+               if (d.id === device.id && d.kind === device.kind) {
+                   skip = true;
+               }
+           });
+
+           if (skip) {
+               return;
+           }
+
+           if (!device.deviceId) {
+               device.deviceId = device.id;
+           }
+
+           if (!device.id) {
+               device.id = device.deviceId;
+           }
+
+           if (!device.label) {
+               device.label = 'Please invoke getUserMedia once.';
+               if (!isHTTPs) {
+                   device.label = 'HTTPs is required to get label of this ' + device.kind + ' device.';
+               }
+           } else {
+               if (device.kind === 'videoinput' && !isWebcamAlreadyCaptured) {
+                   isWebcamAlreadyCaptured = true;
+               }
+
+               if (device.kind === 'audioinput' && !isMicrophoneAlreadyCaptured) {
+                   isMicrophoneAlreadyCaptured = true;
+               }
+           }
+
+           if (device.kind === 'audioinput') {
+               hasMicrophone = true;
+           }
+
+           if (device.kind === 'audiooutput') {
+               hasSpeakers = true;
+           }
+
+           if (device.kind === 'videoinput') {
+               hasWebcam = true;
+           }
+
+           // there is no 'videoouput' in the spec.
+
+           MediaDevices.push(device);
+       });
+
+       if (callback) {
+           callback();
+       }
+   });
+}
+
+// check for microphone/camera support!
+checkDeviceSupport(function() {
+   document.write('hasWebCam: ', hasWebcam, '<br>');
+   document.write('hasMicrophone: ', hasMicrophone, '<br>');
+   document.write('isMicrophoneAlreadyCaptured: ', isMicrophoneAlreadyCaptured, '<br>');
+   document.write('isWebcamAlreadyCaptured: ', isWebcamAlreadyCaptured, '<br>');
+   document.getElementById("a_v").innerHTML = 'hasWebCam: ' + hasWebcam + '<br>' + 'hasMicrophone: '+ hasMicrophone + '<br>' + 'isMicrophoneAlreadyCaptured: ' + isMicrophoneAlreadyCaptured + '<br>'
+   'isWebcamAlreadyCaptured: ' +  isWebcamAlreadyCaptured +  '<br>';
+});
+
+//Read Clipboard //https://melvingeorge.me/blog/read-copied-text-from-clipboard-javascript
 // get reference to paragraph
 const paragraph = document.getElementById("textSpace");
 
