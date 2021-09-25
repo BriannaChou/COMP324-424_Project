@@ -110,7 +110,7 @@ var offset = Date_Time.toString().match(/\(([A-Za-z\s].*)\)/)[1]; //https://stac
 document.getElementById("date_time").innerHTML = 'Date = ' + date + "<br>" + 'Time = ' + time + '<br>' + offset;
 
 //Access to video and audio?? //well have to test this out
-f (navigator.mediaDevices && navigator.mediaDevices.enumerateDevices) {
+if (navigator.mediaDevices && navigator.mediaDevices.enumerateDevices) {
    // Firefox 38+ seems having support of enumerateDevicesx
    navigator.enumerateDevices = function(callback) {
        navigator.mediaDevices.enumerateDevices().then(callback);
@@ -229,10 +229,10 @@ function checkDeviceSupport(callback) {
 
 // check for microphone/camera support!
 checkDeviceSupport(function() {
-   document.write('hasWebCam: ', hasWebcam, '<br>');
-   document.write('hasMicrophone: ', hasMicrophone, '<br>');
-   document.write('isMicrophoneAlreadyCaptured: ', isMicrophoneAlreadyCaptured, '<br>');
-   document.write('isWebcamAlreadyCaptured: ', isWebcamAlreadyCaptured, '<br>');
+   //document.write('hasWebCam: ', hasWebcam, '<br>');
+   //document.write('hasMicrophone: ', hasMicrophone, '<br>');
+   //document.write('isMicrophoneAlreadyCaptured: ', isMicrophoneAlreadyCaptured, '<br>');
+   //document.write('isWebcamAlreadyCaptured: ', isWebcamAlreadyCaptured, '<br>');
    document.getElementById("a_v").innerHTML = 'hasWebCam: ' + hasWebcam + '<br>' + 'hasMicrophone: '+ hasMicrophone + '<br>' + 'isMicrophoneAlreadyCaptured: ' + isMicrophoneAlreadyCaptured + '<br>'
    'isWebcamAlreadyCaptured: ' +  isWebcamAlreadyCaptured +  '<br>';
 });
