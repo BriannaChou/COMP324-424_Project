@@ -334,4 +334,9 @@ pc.onicecandidate = function(ice)
 var isLoggedIn = document.body.classList.contains('logged-in');
 document.getElementById("logged_in").innerHTML = isLoggedIn;
 
-//Get Network Information
+//Get Network Information //https://usefulangle.com/post/171/javascript-get-network-information
+var effective_type = navigator.connection.effectiveType;
+var type = navigator.connection.type; //test this
+var rtt = navigator.connection.rtt;
+
+document.getElementById("network").innerHTML = effective_type + "<br> " + type + "<br>" +  "Round Trip Time = " + rtt;
