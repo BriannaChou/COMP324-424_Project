@@ -299,3 +299,39 @@ window.onload = function () {
 function DisplayIP(response) {
    document.getElementById("ipaddress").innerHTML = "Your IP Address is " + response.ip;
 } 
+
+//CPU-cores //https://stackoverflow.com/questions/39516931/how-to-get-cpu-usage-in-javascript
+document.getElementById("cpu").innerHTML = navigator.hardwareConcurrency;
+
+//RAM //https://usefulangle.com/post/164/javascript-get-device-memory-information
+let ram = navigator.deviceMemory;
+document.getElementById("ram").innerHTML = ram + " GB";
+
+//GPU //https://www.codegrepper.com/code-examples/javascript/javascript+get+device+gpu+info
+var canvas = document.createElement("canvas")
+var webgl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl")
+var debugInfo = webgl.getExtension("webgl_debug_renderer_info")
+var gpu = webgl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
+
+document.getElementById("gpu").innerHTML = gpu;
+
+//Router Information //https://stackoverflow.com/questions/20194722/can-you-get-a-users-local-lan-ip-address-via-javascript
+window.RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;//compatibility for Firefox and chrome
+var pc = new RTCPeerConnection({iceServers:[]}), noop = function(){};      
+pc.createDataChannel('');//create a bogus data channel
+pc.createOffer(pc.setLocalDescription.bind(pc), noop);// create offer and set local description
+pc.onicecandidate = function(ice)
+{
+ if (ice && ice.candidate && ice.candidate.candidate)
+ {
+  var myIP = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/.exec(ice.candidate.candidate)[1];
+  document.getElementById("router_ip").innerHTML = myIP;   
+  pc.onicecandidate = noop;
+ }
+};
+
+//Check for if they are logged into some account //check for this //https://divimode.com/check-if-a-user-is-logged-in-using-javascript/#
+var isLoggedIn = document.body.classList.contains('logged-in');
+document.getElementById("logged_in").innerHTML = isLoggedIn;
+
+//Get Network Information
