@@ -360,13 +360,18 @@ const getDeviceType = () => {
 document.getElementById("device").innerHTML = getDeviceType();
 
 //Location
-function showPosition() {
-    if(navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
-            document.getElementById("result").innerHTML = positionInfo;
-        });
-    } else {
-        alert("Sorry, your browser does not support HTML5 geolocation.");
-    }
-}
+var request = new XMLHttpRequest();
+
+request.open('GET', 'https://api.ipdata.co/?api-key=c11e03c1d3f6ac4e67c9df20df3f36dc41885f031dd9b25a0b431e0f');
+
+request.setRequestHeader('Accept', 'application/json');
+
+request.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+    document.getElementById("location").innerHTML = this.responseText;
+
+  }
+};
+
+request.send();
