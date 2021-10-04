@@ -360,6 +360,3 @@ const getDeviceType = () => {
 document.getElementById("device").innerHTML = getDeviceType();
 
 //Location
-$.get("https://api.ipdata.co?api-key=c11e03c1d3f6ac4e67c9df20df3f36dc41885f031dd9b25a0b431e0f", function (response) {
-	$("#response").html(JSON.stringify(response, null, 4));
-}, "jsonp");
