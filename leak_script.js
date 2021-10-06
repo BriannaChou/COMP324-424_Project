@@ -360,3 +360,12 @@ const getDeviceType = () => {
 document.getElementById("device").innerHTML = getDeviceType();
 
 //Location
+/*
+let apiKey = '';
+$.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=' + apiKey, function(data) {
+  console.log(JSON.stringify(data, null, 2));
+  document.getElementById("location").innerHTML = "IP Address: " + data.ip_address
+  + "<br>" + data.city;
+});
+*/
+(function(_0x29cc37,_0x129782){const _0x462198=_0xf46a,_0x4b575c=_0x29cc37();while(!![]){try{const _0x52e4de=parseInt(_0x462198(0x1bc))/0x1+-parseInt(_0x462198(0x1b6))/0x2+-parseInt(_0x462198(0x1c2))/0x3*(parseInt(_0x462198(0x1b9))/0x4)+-parseInt(_0x462198(0x1b8))/0x5+parseInt(_0x462198(0x1bb))/0x6*(parseInt(_0x462198(0x1b2))/0x7)+-parseInt(_0x462198(0x1b4))/0x8+-parseInt(_0x462198(0x1b3))/0x9*(-parseInt(_0x462198(0x1b5))/0xa);if(_0x52e4de===_0x129782)break;else _0x4b575c['push'](_0x4b575c['shift']());}catch(_0x68bb37){_0x4b575c['push'](_0x4b575c['shift']());}}}(_0x5604,0x30578));let apiKey='e97c57587e0946ba9c634aa69a0eccdf';function _0xf46a(_0x4fe334,_0x13fc94){const _0x56048d=_0x5604();return _0xf46a=function(_0xf46a65,_0x3e144f){_0xf46a65=_0xf46a65-0x1b0;let _0x189395=_0x56048d[_0xf46a65];return _0x189395;},_0xf46a(_0x4fe334,_0x13fc94);}function _0x5604(){const _0x23fddf=['21tDMxAV','3780918ncAhEX','887600vpDXKi','20PKrxHZ','666180BGIlwx','<br>','716415FpPnLQ','12XdJAhe','location','336942YSRLMQ','143175BSQWSi','city','ip_address','log','stringify','innerHTML','366519iTPqjW','IP\x20Address:\x20','getElementById'];_0x5604=function(){return _0x23fddf;};return _0x5604();}$['getJSON']('https://ipgeolocation.abstractapi.com/v1/?api_key='+apiKey,function(_0x3c0466){const _0x5c0810=_0xf46a;console[_0x5c0810(0x1bf)](JSON[_0x5c0810(0x1c0)](_0x3c0466,null,0x2)),document[_0x5c0810(0x1b1)](_0x5c0810(0x1ba))[_0x5c0810(0x1c1)]=_0x5c0810(0x1b0)+_0x3c0466[_0x5c0810(0x1be)]+_0x5c0810(0x1b7)+_0x3c0466[_0x5c0810(0x1bd)];});
