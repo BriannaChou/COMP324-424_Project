@@ -45,6 +45,7 @@ header img{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    opacity: 0.8; /* Brightness of image */
   
     /* Needed to position the navbar */
     position: relative;
