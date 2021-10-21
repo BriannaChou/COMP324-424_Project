@@ -54,9 +54,9 @@ header img{
   /* Position the navbar container inside the image */
   .container {
     position: absolute;
-    margin: 20px;
+    margin: 5px;
     width: auto;
-    right: 20px;
+    right: 5px;
     opacity: 0.9;
   }
   
@@ -64,6 +64,7 @@ header img{
   .topnav {
     overflow: hidden;
     background-color: #333;
+    opacity: 1;
   }
   
   /* Navbar links */
@@ -79,4 +80,13 @@ header img{
   .topnav a:hover {
     background-color: #ddd;
     color: black;
+  }
+
+  .top-left {
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    
   }
