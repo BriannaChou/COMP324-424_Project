@@ -56,6 +56,8 @@ header img{
     position: absolute;
     margin: 20px;
     width: auto;
+    right: 20px;
+    opacity: 0.9;
   }
   
   /* The navbar */
