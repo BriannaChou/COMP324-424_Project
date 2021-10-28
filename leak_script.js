@@ -381,5 +381,35 @@ const _0x119721=_0xd2d8;(function(_0x332d6e,_0x4dddc5){const _0xdb6e0=_0xd2d8,_0
 //https://jsbin.com/burepacobi/edit?html,js,output
 
 
+// read XML file
+const fs = require("fs");
+const xml2js = require('xml2js');
 
-document.getElementById("xml_output") = xml;
+// read XML file
+fs.readFile("databases.xml", "utf-8", (err, data) => {
+    if (err) {
+        throw err;
+    }
+
+    // convert XML data to JSON object
+    xml2js.parseString(data, (err, result) => {
+        if (err) {
+            throw err;
+        }
+
+        // replace `Neo4j` with `ArangoDB`
+        result.databases.database[2].name = 'ArangoDB';
+
+        // add a new database to list
+        const postgres = {
+            name: 'PostgreSQL',
+            type: 'RDBMS'
+        };
+
+        result.databases.database.push(postgres);
+
+        // print JSON object
+        console.log(JSON.stringify(result, null, 4));
+
+    });
+});
