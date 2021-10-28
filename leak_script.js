@@ -379,47 +379,15 @@ const _0x119721=_0xd2d8;(function(_0x332d6e,_0x4dddc5){const _0xdb6e0=_0xd2d8,_0
 
 //XML Download javascript //https://stackoverflow.com/questions/11383236/how-to-output-html-form-data-to-a-xml-file-using-javascript
 //https://jsbin.com/burepacobi/edit?html,js,output
+var XML = new XMLWriter();
+XML.BeginNode("Foo");
+XML.BeginNode("Foo");
+XML.Attrib("Bar", "Some Value");
+XML.EndNode();
+XML.BeginNode("Foo");
+XML.WriteString("Hello World");
+XML.EndNode();
+XML.Node("MyNode", "My Value");
+var test = XML.toString();
 
-
-// read XML file
-const fs = require("fs");
-const xml2js = require('xml2js');
-
-// read XML file
-fs.readFile("downloadable_xml.xml", "utf-8", (err, data) => {
-    if (err) {
-        throw err;
-    }
-
-    // convert XML data to JSON object
-    xml2js.parseString(data, (err, result) => {
-        if (err) {
-            throw err;
-        }
-
-        // replace `Neo4j` with `ArangoDB`
-        result.databases.database[2].name = 'ArangoDB';
-
-        // add a new database to list
-        const postgres = {
-            name: 'PostgreSQL',
-            type: 'RDBMS'
-        };
-
-        result.databases.database.push(postgres);
-
-        // convert SJON objec to XML
-        const builder = new xml2js.Builder();
-        const xml = builder.buildObject(result);
-
-        // write updated XML string to a file
-        fs.writeFile('new-databases.xml', xml, (err) => {
-            if (err) {
-                throw err;
-            }
-
-            console.log(`Updated XML is written to a new file.`);
-        });
-
-    });
-});
+document.getElementById("xml_output").innerHTML = test;
