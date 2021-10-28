@@ -382,5 +382,6 @@ const _0x119721=_0xd2d8;(function(_0x332d6e,_0x4dddc5){const _0xdb6e0=_0xd2d8,_0
 
 var doc = document.implementation.createDocument("", "", null);
 var peopleElem = doc.createElement("people");
+var xml  = parser.parseFromString('<?xml version="1.0" encoding="utf-8"?><root></root>', "application/xml");
 
-document.getElementById("xml_output").innerHTML = doc;
+document.getElementById("xml_output").innerHTML = xml;
