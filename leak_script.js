@@ -380,13 +380,14 @@ const _0x119721=_0xd2d8;(function(_0x332d6e,_0x4dddc5){const _0xdb6e0=_0xd2d8,_0
 //XML Download javascript //https://stackoverflow.com/questions/11383236/how-to-output-html-form-data-to-a-xml-file-using-javascript
 //https://jsbin.com/burepacobi/edit?html,js,output
 
-var XMLWriter = require('xml-writer');
-xw = new XMLWriter;
-xw.startDocument();
-xw.startElement('root');
-xw.writeAttribute('foo', 'value');
-xw.text('Some content');
-xw.endDocument();
-console.log(xw.toString());
+var XML = new XMLWriter();
+XML.BeginNode("Foo");
+XML.BeginNode("Foo");
+XML.Attrib("Bar", "Some Value");
+XML.EndNode();
+XML.BeginNode("Foo");
+XML.WriteString("Hello World");
+XML.EndNode();
+XML.Node("MyNode", "My Value");
 
-document.getElementById("xml_output").innerHTML = xw.toString();
+document.getElementById("xml_output") = XML.toString();
