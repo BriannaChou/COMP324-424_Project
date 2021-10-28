@@ -39,12 +39,13 @@
         </div>
       </div>
     <!--img src="assets/adi-goldstein-EUsVwEOsblE-unsplash.jpg" alt="Background"-->
-    <table class=styled-table>
+    <table class=styled-table id=main_table>
         <thead>
         <caption>Browser Information</caption>
         <tr>
             <th id="type">Type</th>
             <th id="value">Value</th>
+            <th><button onclick="exporttoxml()" type="button" id="XML_button">XML Download</button> </th>
         </tr>
         </thead>
         <tbody>
@@ -109,14 +110,6 @@
             <td id=gpu></td>
         </tr>
         <tr>
-            <td>Router IP Address</td>
-            <td id=router_ip></td>
-        </tr>
-        <tr>
-            <td>Logged In</td>
-            <td id=logged_in></td>
-        </tr>
-        <tr>
             <td>Network Type</td>
             <td id=network></td>
         </tr>
@@ -131,6 +124,10 @@
             </td> 
             <td id=location></td>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        </tr>
+        <tr>
+            <td>XML Testing</td>
+            <td id=xml_output></td>
         </tr>
         </tbody>
     </table>
