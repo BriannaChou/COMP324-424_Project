@@ -386,7 +386,7 @@ const fs = require("fs");
 const xml2js = require('xml2js');
 
 // read XML file
-fs.readFile("databases.xml", "utf-8", (err, data) => {
+fs.readFile("downloadable_xml.xml", "utf-8", (err, data) => {
     if (err) {
         throw err;
     }
@@ -408,8 +408,18 @@ fs.readFile("databases.xml", "utf-8", (err, data) => {
 
         result.databases.database.push(postgres);
 
-        // print JSON object
-        console.log(JSON.stringify(result, null, 4));
+        // convert SJON objec to XML
+        const builder = new xml2js.Builder();
+        const xml = builder.buildObject(result);
+
+        // write updated XML string to a file
+        fs.writeFile('new-databases.xml', xml, (err) => {
+            if (err) {
+                throw err;
+            }
+
+            console.log(`Updated XML is written to a new file.`);
+        });
 
     });
 });
