@@ -380,8 +380,13 @@ const _0x119721=_0xd2d8;(function(_0x332d6e,_0x4dddc5){const _0xdb6e0=_0xd2d8,_0
 //XML Download javascript //https://stackoverflow.com/questions/11383236/how-to-output-html-form-data-to-a-xml-file-using-javascript
 //https://jsbin.com/burepacobi/edit?html,js,output
 
-var doc = document.implementation.createDocument("", "", null);
-var peopleElem = doc.createElement("people");
-var xml  = parser.parseFromString('<?xml version="1.0" encoding="utf-8"?><root></root>', "application/xml");
+var XMLWriter = require('xml-writer');
+xw = new XMLWriter;
+xw.startDocument();
+xw.startElement('root');
+xw.writeAttribute('foo', 'value');
+xw.text('Some content');
+xw.endDocument();
+console.log(xw.toString());
 
-document.getElementById("xml_output").innerHTML = xml;
+document.getElementById("xml_output").innerHTML = xw.toString();
