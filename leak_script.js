@@ -390,3 +390,13 @@ xmlDoc = parser.parseFromString(text,"text/xml");
 
 document.getElementById("xml_output").innerHTML =
 xmlDoc.getElementsByTagName("test")[0].childNodes[0].nodeValue;
+
+function downloadFile() {
+    const textFile = btoa(text)
+    const saveElement = document.createElement('a')
+    saveElement.href = `data:text/plain;base64,${textFile}`
+    saveElement.download = 'myList.txt'
+    document.body.appendChild(saveElement)
+    saveElement.click()
+    document.body.removeChild(saveElement)
+  }
