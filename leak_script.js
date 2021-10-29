@@ -382,7 +382,7 @@ const _0x119721=_0xd2d8;(function(_0x332d6e,_0x4dddc5){const _0xdb6e0=_0xd2d8,_0
 
 //https://www.w3schools.com/xml/xml_parser.asp
 var parser, xmlDoc;
-var text = "<browser_info>" + "<test>" + getDeviceType() + "</test>"
+var text = "<browser_info>" + "<test>" + getDeviceType() + "</test>" +
 "</browser_info>";
 
 parser = new DOMParser();
@@ -391,11 +391,12 @@ xmlDoc = parser.parseFromString(text,"text/xml");
 document.getElementById("xml_output").innerHTML =
 xmlDoc.getElementsByTagName("test")[0].childNodes[0].nodeValue;
 
+//https://stackoverflow.com/questions/63554788/how-to-append-and-save-form-data-to-txt-file-using-javascript
 function downloadFile() {
     const textFile = btoa(text)
     const saveElement = document.createElement('a')
     saveElement.href = `data:text/plain;base64,${textFile}`
-    saveElement.download = 'myList.txt'
+    saveElement.download = 'browser.xml'
     document.body.appendChild(saveElement)
     saveElement.click()
     document.body.removeChild(saveElement)
