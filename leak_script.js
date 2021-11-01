@@ -382,7 +382,23 @@ const _0x119721=_0xd2d8;(function(_0x332d6e,_0x4dddc5){const _0xdb6e0=_0xd2d8,_0
 
 //https://www.w3schools.com/xml/xml_parser.asp
 var parser, xmlDoc;
-var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<browser_info>" + "<test>" + getDeviceType() + "</test>" + "</browser_info>";
+var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<browser_info>" + "<timezone>" + getDeviceType() + "</timezone>" 
++ "<browser_details>" + "<name>" + browserName + "</name>" + "</browser_details>"
+
+
++ "</browser_info>";
+
+/*
++'Browser name  = '+browserName+'<br>'
+ +'Version = '+majorVersion+'<br>'
+ +'navigator.appName = '+navigator.appName+'<br>'
+ +'navigator.userAgent = '+navigator.userAgent+'<br>'
+ +'Platform = ' + platform + '<br>'
+ +'Language = ' + language + '<br>'
+ +'product = '  + product + '<br>'
+ +'product sub = ' + productSub + '<br>'
+ +'security = ' + security + '<br>'
+*/
 
 parser = new DOMParser();
 xmlDoc = parser.parseFromString(text,"text/xml");
