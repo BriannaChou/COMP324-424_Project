@@ -418,27 +418,14 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<x_value>" + myMouseX + "</x_value>" +
 "<y_value>" + myMouseY + "</y_value>" +
 "</mouse_tracking>" +
-"<cpu_cores>" + navigator.hardwareConcurrency + "</cpu_cores>" +
-"<ram id=\"Gigabytes\">" + ram + "</ram>" +
-"<gpu>" + gpu + "</gpu>" +
+
 
 "</browser_info>";
 
 /*
-//CPU-cores //https://stackoverflow.com/questions/39516931/how-to-get-cpu-usage-in-javascript
-document.getElementById("cpu").innerHTML = navigator.hardwareConcurrency;
-
-//RAM //https://usefulangle.com/post/164/javascript-get-device-memory-information
-let ram = navigator.deviceMemory;
-document.getElementById("ram").innerHTML = ram + " GB";
-
-//GPU //https://www.codegrepper.com/code-examples/javascript/javascript+get+device+gpu+info
-var canvas = document.createElement("canvas")
-var webgl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl")
-var debugInfo = webgl.getExtension("webgl_debug_renderer_info")
-var gpu = webgl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
-
-document.getElementById("gpu").innerHTML = gpu;
+"<cpu_cores>" + navigator.hardwareConcurrency + "</cpu_cores>" +
+"<ram id=\"Gigabytes\">" + ram + "</ram>" +
+"<gpu>" + gpu + "</gpu>" +
 
 */
 
