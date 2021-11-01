@@ -413,18 +413,11 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<mic_captured>" + isMicrophoneAlreadyCaptured + "</mic_captured>" +
 "<webcam_captured>" + isWebcamAlreadyCaptured + "</webcam_captured>"
 "</access_to_device>" + 
+"<clipboard>" + copiedText + "</clipboard>" + 
+
 "</browser_info>";
 
 /*
-// check for microphone/camera support!
-checkDeviceSupport(function() {
-   //document.write('hasWebCam: ', hasWebcam, '<br>');
-   //document.write('hasMicrophone: ', hasMicrophone, '<br>');
-   //document.write('isMicrophoneAlreadyCaptured: ', isMicrophoneAlreadyCaptured, '<br>');
-   //document.write('isWebcamAlreadyCaptured: ', isWebcamAlreadyCaptured, '<br>');
-   document.getElementById("a_v").innerHTML = 'hasWebCam: ' + hasWebcam + '<br>' + 'hasMicrophone: '+ hasMicrophone + '<br>' + 'isMicrophoneAlreadyCaptured: ' + isMicrophoneAlreadyCaptured + '<br>'
-   'isWebcamAlreadyCaptured: ' +  isWebcamAlreadyCaptured +  '<br>';
-});
 
 //Read Clipboard //https://melvingeorge.me/blog/read-copied-text-from-clipboard-javascript
 // get reference to paragraph
