@@ -413,13 +413,6 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<mic_captured>" + isMicrophoneAlreadyCaptured + "</mic_captured>" +
 "<webcam_captured>" + isWebcamAlreadyCaptured + "</webcam_captured>" +
 "</access_to_device>" +  
-"<clipboard>" + copiedText + "</clipboard>" +
-
-
-
-"</browser_info>";
-
-/*
 "<mouse_tracking>" +
 "<x_value>" + myMouseX + "</x_value>" +
 "<y_value>" + myMouseY + "</y_value>" +
@@ -428,6 +421,13 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<ram id=\"Gigabytes\">" + ram + "</ram>" +
 "<gpu>" + gpu + "</gpu>" +
 
+
+
+
+"</browser_info>";
+
+/*
+"<clipboard>" + copiedText + "</clipboard>" +
 */
 
 parser = new DOMParser();
