@@ -441,7 +441,7 @@ document.getElementById("date_time").innerHTML = 'Date = ' + date + "<br>" + 'Ti
 */
 
 parser = new DOMParser();
-xmlDoc = parser.parseFromString(text,"text/html");
+xmlDoc = parser.parseFromString(text,"text/xml");
 
 document.getElementById("xml_output").innerHTML =
 xmlDoc.getElementsByTagName("test")[0].childNodes[0].nodeValue;
