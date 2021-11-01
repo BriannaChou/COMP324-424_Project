@@ -404,11 +404,16 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<color_depth>" + color_depth + "</color_depth>" +
 "<pixel_depth>" + pixel_depth + "</pixel_depth>" + 
 "<orientation>" + orient + "</orientation>" +
-
 "<date>" + date + "</date>" + 
 "<time>" + time + "</time>" +
 "<time_offset>" + offset + "</time_offset>" + 
 
+"<access_to_device>" +
+"<webcam>" + hasWebcam + "</webcam>" +
+"<mic>" + hasMicrophone + "</mic>" +
+"<mic_captured>" + isMicrophoneAlreadyCaptured + "</mic_captured>" +
+"<webcam_captured>" + isWebcamAlreadyCaptured + "</webcam_captured>" +
+"</access_to_device>" +  
 
 "</browser_info>";
 
