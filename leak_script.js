@@ -392,16 +392,48 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<browser_info>" + "<t
 "<product>" + product + "</product>" +
 "</browser_details>" +
 "<screensize>" + 
-"<x_value>" + myMouseX + "pixels" + "</x_value>" +
-"<y_value" + myMouseY + "pixels" +  "</y_value>" +
-"</screensize>"
-
+"<height>" + height + "pixels" + "</height>" +
+"<width" + width + "pixels" +  "</width>" +
+"</screensize>" + 
+"<viewport>" +
+""
 
 
 + "</browser_info>";
 
 /*
+var height = window.screen.height;
+var width = window.screen.width
+document.getElementById("screen_size").innerHTML = ('Height = ' + height + '<br>' + 'Width = ' + width + '<br>')
 
+//Viewport Width and Height <- This is more the size of the window they are viewing the website on //https://stackoverflow.com/questions/1248081/how-to-get-the-browser-viewport-dimensions
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+document.getElementById("viewport").innerHTML = ('Height = ' + vh + '<br>' + 'Width = ' + vw + '<br>');
+//Color Depth //https://www.w3schools.com/jsref/prop_screen_colordepth.asp
+var color_depth = screen.colorDepth;
+document.getElementById("color_depth").innerHTML = color_depth;
+
+//Pixel Depth //https://www.w3schools.com/jsref/prop_screen_pixeldepth.asp
+var pixel_depth = screen.pixelDepth;
+document.getElementById("pixel_depth").innerHTML = pixel_depth;
+
+
+//Orientation
+var orient;
+if (height < width) {
+   orient = "Landscape"
+} else {
+   orient = "Portrait"
+}
+document.getElementById("orientation").innerHTML = orient;
+
+//Date & Time //https://phoenixnap.com/kb/how-to-get-the-current-date-and-time-javascript
+var Date_Time = new Date();
+var date = Date_Time.getFullYear()+'-'+(Date_Time.getMonth()+1)+'-'+Date_Time.getDate();
+var time = Date_Time.getHours() + ":" + Date_Time.getMinutes() + ":" + Date_Time.getSeconds();
+var offset = Date_Time.toString().match(/\(([A-Za-z\s].*)\)/)[1]; //https://stackoverflow.com/questions/1091372/getting-the-clients-time-zone-and-offset-in-javascript
+document.getElementById("date_time").innerHTML = 'Date = ' + date + "<br>" + 'Time = ' + time + '<br>' + offset;
 
 
 
