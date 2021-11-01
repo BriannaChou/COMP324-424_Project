@@ -401,14 +401,14 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<height>" + vh + "</height>" +
 "<width>" + vw + "</width>" +
 "</viewport>" + 
+"<color_depth>" + color_depth + "</color_depth>" +
+"<pixel_depth>" + pixel_depth + "</pixel_depth>" + 
+"<orientation>" + orient + "</orientation>" +
 
 "</browser_info>";
 
 /*
 
-"<color_depth>" + color_depth + "</color_depth>" +
-"<pixel_depth>" + pixel_depth + "</pixel_depth>" + 
-"<orientation>" + orient + "</orientation>" +
 "<date>" + date + "</date>" + 
 "<time>" + time + "</time>" +
 "<time_offset>" + offset + "</time_offset>" + 
