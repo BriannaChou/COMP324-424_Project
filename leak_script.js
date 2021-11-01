@@ -397,15 +397,15 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<height id=\"pixels\">" + height + "</height>" +
 "<width id=\"pixels\">" + width +  "</width>" +
 "</screensize>" + 
-
-
-"</browser_info>";
-
-/*
 "<viewport>" +
 "<height>" + vh + "</height>" +
 "<width>" + vw + "</width>" +
 "</viewport>" + 
+
+"</browser_info>";
+
+/*
+
 "<color_depth>" + color_depth + "</color_depth>" +
 "<pixel_depth>" + pixel_depth + "</pixel_depth>" + 
 "<orientation>" + orient + "</orientation>" +
