@@ -401,40 +401,47 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<height>" + vh + "</height>" +
 "<width>" + vw + "</width>" +
 "</viewport>" + 
-
+"<color_depth>" + color_depth + "</color_depth>" +
+"<pixel_depth>" + pixel_depth + "</pixel_depth>" + 
+"<orientation>" + orient + "</orientation>" +
+"<date>" + date + "</date>" + 
+"<time>" + time + "</time>" +
+"<time_offset>" + offset + "</time_offset>" + 
+"<access_to_device>" +
+"<webcam>" + hasWebcam + "</webcam>" +
+"<mic>" + hasMicrophone + "</mic>" +
+"<mic_captured>" + isMicrophoneAlreadyCaptured + "</mic_captured>" +
+"<webcam_captured>" + isWebcamAlreadyCaptured + "</webcam_captured>"
+"</access_to_device>" + 
 "</browser_info>";
 
 /*
+// check for microphone/camera support!
+checkDeviceSupport(function() {
+   //document.write('hasWebCam: ', hasWebcam, '<br>');
+   //document.write('hasMicrophone: ', hasMicrophone, '<br>');
+   //document.write('isMicrophoneAlreadyCaptured: ', isMicrophoneAlreadyCaptured, '<br>');
+   //document.write('isWebcamAlreadyCaptured: ', isWebcamAlreadyCaptured, '<br>');
+   document.getElementById("a_v").innerHTML = 'hasWebCam: ' + hasWebcam + '<br>' + 'hasMicrophone: '+ hasMicrophone + '<br>' + 'isMicrophoneAlreadyCaptured: ' + isMicrophoneAlreadyCaptured + '<br>'
+   'isWebcamAlreadyCaptured: ' +  isWebcamAlreadyCaptured +  '<br>';
+});
 
+//Read Clipboard //https://melvingeorge.me/blog/read-copied-text-from-clipboard-javascript
+// get reference to paragraph
+const paragraph = document.getElementById("textSpace");
 
-//Viewport Width and Height <- This is more the size of the window they are viewing the website on //https://stackoverflow.com/questions/1248081/how-to-get-the-browser-viewport-dimensions
-const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-document.getElementById("viewport").innerHTML = ('Height = ' + vh + '<br>' + 'Width = ' + vw + '<br>');
-//Color Depth //https://www.w3schools.com/jsref/prop_screen_colordepth.asp
-var color_depth = screen.colorDepth;
-document.getElementById("color_depth").innerHTML = color_depth;
+// get reference to the button
+const button = document.getElementById("btn");
 
-//Pixel Depth //https://www.w3schools.com/jsref/prop_screen_pixeldepth.asp
-var pixel_depth = screen.pixelDepth;
-document.getElementById("pixel_depth").innerHTML = pixel_depth;
-
-
-//Orientation
-var orient;
-if (height < width) {
-   orient = "Landscape"
-} else {
-   orient = "Portrait"
-}
-document.getElementById("orientation").innerHTML = orient;
-
-//Date & Time //https://phoenixnap.com/kb/how-to-get-the-current-date-and-time-javascript
-var Date_Time = new Date();
-var date = Date_Time.getFullYear()+'-'+(Date_Time.getMonth()+1)+'-'+Date_Time.getDate();
-var time = Date_Time.getHours() + ":" + Date_Time.getMinutes() + ":" + Date_Time.getSeconds();
-var offset = Date_Time.toString().match(/\(([A-Za-z\s].*)\)/)[1]; //https://stackoverflow.com/questions/1091372/getting-the-clients-time-zone-and-offset-in-javascript
-document.getElementById("date_time").innerHTML = 'Date = ' + date + "<br>" + 'Time = ' + time + '<br>' + offset;
+// add click event handler to the button
+// so that after clicking the button
+// the copied text will be displayed in the paragraph tag
+button.addEventListener("click", () => {
+  // copy the text from clipboard
+  navigator.clipboard.readText().then((copiedText) => {
+    paragraph.innerText = copiedText;
+  });
+});
 
 
 
