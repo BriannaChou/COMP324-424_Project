@@ -394,8 +394,8 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<product>" + product + "</product>" +
 "</browser_details>" +
 "<screensize>" + 
-"<height>" + height + "pixels" + "</height>" +
-"<width" + width + "pixels" +  "</width>" +
+"<height id=pixels>" + height + "</height>" +
+"<width id=pixels" + width +  "</width>" +
 "</screensize>" + 
 "<viewport>" +
 "<height>" + vh + "</height>" +
