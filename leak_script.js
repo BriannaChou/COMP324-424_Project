@@ -442,8 +442,9 @@ button.addEventListener("click", () => {
 parser = new DOMParser();
 xmlDoc = parser.parseFromString(text,"text/xml");
 
-document.getElementById("xml_output").innerHTML =
-xmlDoc.getElementsByTagName("test")[0].childNodes[0].nodeValue;
+document.getElementById("xml_output").innerHTML = test; 
+
+//xmlDoc.getElementsByTagName("test")[0].childNodes[0].nodeValue;
 
 //https://stackoverflow.com/questions/63554788/how-to-append-and-save-form-data-to-txt-file-using-javascript
 function downloadFile() {
