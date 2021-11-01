@@ -412,8 +412,7 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<mic>" + hasMicrophone + "</mic>" +
 "<mic_captured>" + isMicrophoneAlreadyCaptured + "</mic_captured>" +
 "<webcam_captured>" + isWebcamAlreadyCaptured + "</webcam_captured>" +
-"</access_to_device>" + 
-"<clipboard>" + copiedText + "</clipboard>" + 
+"</access_to_device>" +  
 
 "</browser_info>";
 
