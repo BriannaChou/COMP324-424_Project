@@ -405,13 +405,15 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<pixel_depth>" + pixel_depth + "</pixel_depth>" + 
 "<orientation>" + orient + "</orientation>" +
 
+"<date>" + date + "</date>" + 
+"<time>" + time + "</time>" +
+"<time_offset>" + offset + "</time_offset>" + 
+
+
 "</browser_info>";
 
 /*
 
-"<date>" + date + "</date>" + 
-"<time>" + time + "</time>" +
-"<time_offset>" + offset + "</time_offset>" + 
 "<access_to_device>" +
 "<webcam>" + hasWebcam + "</webcam>" +
 "<mic>" + hasMicrophone + "</mic>" +
