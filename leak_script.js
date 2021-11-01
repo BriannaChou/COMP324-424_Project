@@ -382,13 +382,15 @@ const _0x119721=_0xd2d8;(function(_0x332d6e,_0x4dddc5){const _0xdb6e0=_0xd2d8,_0
 
 //https://www.w3schools.com/xml/xml_parser.asp
 var parser, xmlDoc;
-var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<browser_info>" + "<timezone>" + getDeviceType() + "</timezone>" +
+var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + 
+"<browser_info>" + 
+"<timezone>" + getDeviceType() + "</timezone>" +
 "<browser_details>" + 
 "<name>" + browserName + "</name>" +
 "<version>" + majorVersion + "</version>" +
 "<user_agent>" + navigator.userAgent + "</user_agent>" +
 "<platform>" + platform + "</platform>" + 
-"<language>" + language + "</platform>" +
+"<language>" + language + "</language>" +
 "<product>" + product + "</product>" +
 "</browser_details>" +
 "<screensize>" + 
@@ -396,16 +398,14 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<browser_info>" + "<t
 "<width" + width + "pixels" +  "</width>" +
 "</screensize>" + 
 "<viewport>" +
-""
+"<height>" + vh + "</height>" +
+"<width>" + vw + "</width>" +
+"</viewport>"
 
 
 + "</browser_info>";
 
 /*
-var height = window.screen.height;
-var width = window.screen.width
-document.getElementById("screen_size").innerHTML = ('Height = ' + height + '<br>' + 'Width = ' + width + '<br>')
-
 //Viewport Width and Height <- This is more the size of the window they are viewing the website on //https://stackoverflow.com/questions/1248081/how-to-get-the-browser-viewport-dimensions
 const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
