@@ -392,21 +392,19 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<platform>" + platform + "</platform>" + 
 "<language>" + language + "</language>" +
 "<product>" + product + "</product>" +
-
-
-
-+ "</browser_info>";
-
-/*
 "</browser_details>" +
 "<screensize>" + 
 "<height id=pixels>" + height + "</height>" +
-"<width id=pixels" + width +  "</width>" +
+"<width id=pixels>" + width +  "</width>" +
 "</screensize>" + 
 "<viewport>" +
 "<height>" + vh + "</height>" +
 "<width>" + vw + "</width>" +
-"</viewport>"
+"</viewport>" + 
+
+"</browser_info>";
+
+/*
 
 
 //Viewport Width and Height <- This is more the size of the window they are viewing the website on //https://stackoverflow.com/questions/1248081/how-to-get-the-browser-viewport-dimensions
