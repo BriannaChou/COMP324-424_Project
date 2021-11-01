@@ -397,6 +397,11 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<height id=\"pixels\">" + height + "</height>" +
 "<width id=\"pixels\">" + width +  "</width>" +
 "</screensize>" + 
+
+
+"</browser_info>";
+
+/*
 "<viewport>" +
 "<height>" + vh + "</height>" +
 "<width>" + vw + "</width>" +
@@ -413,27 +418,6 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<mic_captured>" + isMicrophoneAlreadyCaptured + "</mic_captured>" +
 "<webcam_captured>" + isWebcamAlreadyCaptured + "</webcam_captured>" +
 "</access_to_device>" +  
-
-"</browser_info>";
-
-/*
-
-//Read Clipboard //https://melvingeorge.me/blog/read-copied-text-from-clipboard-javascript
-// get reference to paragraph
-const paragraph = document.getElementById("textSpace");
-
-// get reference to the button
-const button = document.getElementById("btn");
-
-// add click event handler to the button
-// so that after clicking the button
-// the copied text will be displayed in the paragraph tag
-button.addEventListener("click", () => {
-  // copy the text from clipboard
-  navigator.clipboard.readText().then((copiedText) => {
-    paragraph.innerText = copiedText;
-  });
-});
 
 
 
