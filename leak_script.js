@@ -426,7 +426,7 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 parser = new DOMParser();
 xmlDoc = parser.parseFromString(text,"text/xml");
 
-document.getElementById("xml_output").innerHTML = test; 
+document.getElementById("xml_output").innerHTML = text; 
 
 //xmlDoc.getElementsByTagName("test")[0].childNodes[0].nodeValue;
 
