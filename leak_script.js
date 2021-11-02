@@ -423,7 +423,7 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<network>" +
 "<type>" + effective_type + "</type>" +
 "<round_trip_time>" + rtt + "</round_trip_time>" + 
-"<network>" + 
+"</network>" + 
 "<device>" + getDeviceType() + "</device>" +
 
 
