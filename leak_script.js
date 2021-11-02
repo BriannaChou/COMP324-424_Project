@@ -425,7 +425,7 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<round_trip_time>" + rtt + "</round_trip_time>" + 
 "</network>" + 
 "<device>" + getDeviceType() + "</device>" +
-
+"<city>" + data.city + "</city>" + 
 
 "</browser_info>";
 
