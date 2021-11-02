@@ -420,14 +420,18 @@ var text = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
 "<cpu_cores>" + navigator.hardwareConcurrency + "</cpu_cores>" +
 "<ram id=\"Gigabytes\">" + ram + "</ram>" +
 "<gpu>" + gpu + "</gpu>" +
-
-
+"<network>" +
+"<type>" + effective_type + "</type>" +
+"<round_trip_time>" + rtt + "</round_trip_time>" + 
+"<network>" + 
+"<device>" + getDeviceType() + "</device>" +
 
 
 "</browser_info>";
 
 /*
-"<clipboard>" + copiedText + "</clipboard>" +
+document.getElementById("device").innerHTML = getDeviceType();
+
 */
 
 parser = new DOMParser();
