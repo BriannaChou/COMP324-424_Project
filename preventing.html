@@ -6,7 +6,7 @@
 <p><cite>"Hardening is a process whereby a computer is made more resistant to cyber intrusion from malicious attack and from accidental infection.</cite> <a href="https://www.controleng.com/articles/six-steps-to-improve-computer-hardening/">[link]</a>"  This is a great definition of what hardening is.
     However the goals for this website are for hardening a browser to make it more private, which would allow it to be more secure.
 </p>
-<h1>Recommendations for Firefox Hardening</h1>
+<h1>Recommendations for Firefox</h1>
 <h2>General Section:</h2>
 <dl>
     <dt>Uncheck <b>Restore previous session</b></dt>
@@ -32,7 +32,31 @@
 <dl>
     <dt>Under <b>Cookies and Site Data</b>, check <b>Delete cookies and site data when Firefox is closed</b></dt>
     <dd>- next time the you visit the same website, the website will not be able to read the previous sessions cookies, since there none.</dd>
-    
+    <dt>Under <b>Logins and Passwords</b>, uncheck the boxes (with the inside list first): </dt>
+    <ul>
+        <li><b>Show alerts about passwords for breached websites</b></li>
+        <li><b>Suggest and generate strong passwords</b></li>
+        <li><b>Autofill logins and passwords</b></li>
+        <li><b>Ask to save logins and passwords for websites</b></li>
+    </ul>
+    <dt>Under <b>History</b>, in the dropdown choose Firefox will <b>Use custom settings for history</b></dt>
+    <ul>
+        <li>uncheck <b>Remember search and form history, and Remember browsing and download history</b></li>
+        <li>Check <b>Clear history when Firefox closes</b></li>
+        <li><b>DO NOT</b> check the box next to <b>Always use private browsing mode</b> <li>- this will break Firefox containers</li></li>
+    </ul>
+    <dt>Under <b>Address Bar</b>, only have <b>Bookmarks </b> and <b>Open tabs </b> showing up</dt>
+    <dt>Under <b>Permissions</b>, click <b>Settings...</b> next to each <b>Location, Camera, Microphone,</b> and <b> Notifications.</b> In the popup, check the "<b>Block new requests..</b>" box on the bottom</dt>
+    <dt>Under <b>Firefox Data Collection and Use</b>, and uncheck everything</dt>
+    <dt>Under <b>Security</b>, uncheck everything</dt>
+    <dt>Under <b>HTTPS-Only Mode</b> best practice would be to use <b>Enable HTTPS-Only Mode in all windows</b>.</dt>
+    <dt>These are the settings when you enter <b>about:config</b> in the search bar:
+        <ul>
+            <dt><b>geo.enabled</b> -> false</dt>
+            <dd>descriptiotn</dd>
+        </ul>
+
+    </dt>
 </dl>
 </body>
 </html> 
