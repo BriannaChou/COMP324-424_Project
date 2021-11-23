@@ -456,7 +456,7 @@ var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 var mask;
 
-var pointCount = 1000;
+var pointCount = 1200;
 var str = "WEB DETECTIVE";
 var fontStr = "bold 64pt Helvetica Neue, Helvetica, Arial, sans-serif";
 
