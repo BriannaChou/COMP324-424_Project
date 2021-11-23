@@ -84,6 +84,18 @@ header img{
     /* Needed to position the navbar */
     position: relative;
   }
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  canvas {
+    display:block;
+    margin:auto;
+    background:#97eaf59d;
+  }
   
   /* Position the navbar container inside the image */
   .container {
