@@ -456,14 +456,14 @@ var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 var mask;
 
-var pointCount = 1200;
+var pointCount = 650;
 var str = "WEB DETECTIVE";
-var fontStr = "bold 64pt Helvetica Neue, Helvetica, Arial, sans-serif";
+var fontStr = "bold 48pt Helvetica Neue, Helvetica, Arial, sans-serif";
 
 ctx.font = fontStr;
 ctx.textAlign = "center";
 c.width = ctx.measureText(str).width;
-c.height = 64; // Set to font size
+c.height = 48; // Set to font size
 
 var whitePixels = [];
 var points = [];
@@ -569,5 +569,5 @@ return ((mask.width*y)+x)*4;
 
 }
 
-setInterval(loop,25);
+setInterval(loop,20);
 init();
