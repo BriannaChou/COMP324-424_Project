@@ -308,3 +308,29 @@ h2 {
 p {
   margin: 0 0 16px;
 }
+
+table {
+  width:90%;
+}
+tr {
+  width:30%;
+  position:relative;
+}
+tr:after{
+  content:'';
+  display:block;
+  margin-top:100%;
+}
+tr .content {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background:gold;
+}
+
+.styled-table {
+  height: 100px; /* or any value */
+  overflow: auto;
+}
