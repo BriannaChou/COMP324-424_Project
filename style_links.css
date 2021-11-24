@@ -330,7 +330,11 @@ tr .content {
   background:gold;
 }
 
-.styled-table {
-  height: 100px; /* or any value */
-  overflow: auto;
+table {
+  overflow-y:scroll;
+  height:700px;
+  display:block;
+}
+td {
+  font-size: 17px;
 }
