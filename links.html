@@ -121,11 +121,113 @@
     <div class="strip__content">
       <h1 class="strip__title" data-name="Ipsum">Hardening</h1>
       <div class="strip__inner-text">
-        <h2>Ettrics</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia sapiente deserunt consectetur, quod reiciendis corrupti quo ea aliquid! Repellendus numquam quo, voluptate. Suscipit soluta omnis quibusdam facilis, illo voluptates odit!</p>
-        <p>
-          <a href="https://twitter.com/ettrics" target="_blank"><i class="fa fa-twitter"></i></a>
+        <h2></h2>
+        <h1>Browser Hardening</h1>
+        <p><cite>"Hardening is a process whereby a computer is made more resistant to cyber intrusion from malicious attack and from accidental infection.</cite> <a href="https://www.controleng.com/articles/six-steps-to-improve-computer-hardening/">[link]</a>"  This is a great definition of what hardening is.
+            However the goals for this website are for hardening a browser to make it more private, which would allow it to be more secure.
         </p>
+        <h1>Recommendations for Firefox</h1>
+        <h2>General Section:</h2>
+        <dl>
+            <dt>Uncheck <b>Restore previous session</b></dt>
+            <dd>- If you use a VPN and your connection goes down, then when Firefox loads up again, the website can potentially know your IP if you restore the page and are not using the VPN.</dd>
+        </dl> 
+        <h2>Home Section:</h2>
+        <dl>
+            <dt>Set <b>Homepage and new windows</b> to <b>Blank Page</b></dt>
+            <dd>- one less connection when you boot up the browser</dd>
+            <dt>Set <b>New Tab</b> to <b>Blank Page</b></dt>
+            <dd>- These will prevent Firefox from spawning their own sites when you need a new page/tab.</dd>
+            <dt>Uncheck everything under <b>Firefox Home Content</b> (Shortcuts, Recommended by Pocket, Recent activity, Snippets)</dt>
+            <dd>- This will prevent Firefox from loading their own content</dd>
+        </dl>
+        <h2>Search Section</h2>
+        <dl>
+            <dt>Change <b>Default Search Engine</b> to <b>DuckDuckGo</b></dt>
+            <dd>- DuckDuckGo is one of the more privacy-centric browsers (searx is a good alternative as well)</dd>
+            <dt>Uncheck <b>Provide Suggestions</b></dt>
+            <dd>- Prevents the queries from going to the Google API</dd>
+        </dl>
+        <h2>Privacy & Security</h2>
+        <dl>
+            <dt>Under <b>Cookies and Site Data</b>, check <b>Delete cookies and site data when Firefox is closed</b></dt>
+            <dd>- next time the you visit the same website, the website will not be able to read the previous sessions cookies, since there none.</dd>
+            <dt>Under <b>Logins and Passwords</b>, uncheck the boxes (with the inside list first): </dt>
+            <ul>
+                <li><b>Show alerts about passwords for breached websites</b></li>
+                <li><b>Suggest and generate strong passwords</b></li>
+                <li><b>Autofill logins and passwords</b></li>
+                <li><b>Ask to save logins and passwords for websites</b></li>
+            </ul>
+            <dt>Under <b>History</b>, in the dropdown choose Firefox will <b>Use custom settings for history</b></dt>
+            <ul>
+                <li>uncheck <b>Remember search and form history, and Remember browsing and download history</b></li>
+                <li>Check <b>Clear history when Firefox closes</b></li>
+                <li><b>DO NOT</b> check the box next to <b>Always use private browsing mode</b> <li>- this will break Firefox containers</li></li>
+            </ul>
+            <dt>Under <b>Address Bar</b>, only have <b>Bookmarks </b> and <b>Open tabs </b> showing up</dt>
+            <dt>Under <b>Permissions</b>, click <b>Settings...</b> next to each <b>Location, Camera, Microphone,</b> and <b> Notifications.</b> In the popup, check the "<b>Block new requests..</b>" box on the bottom</dt>
+            <dt>Under <b>Firefox Data Collection and Use</b>, and uncheck everything</dt>
+            <dt>Under <b>Security</b>, uncheck everything</dt>
+            <dt>Under <b>HTTPS-Only Mode</b> best practice would be to use <b>Enable HTTPS-Only Mode in all windows</b>.</dt>
+            <dt>These are the settings when you enter <b>about:config</b> in the search bar:
+                <ul>
+                    <dt><b>geo.enabled</b> -> false</dt>
+                    <dd>Disables firefox from sharing your location</dd>
+                    <dt><b>browser.safebrowsing.malware.enabled</b> -> false</dt>
+                    <dd>Disables Google's ability to monitor your web traffic for malware</dd>
+                    <dt><b>dom.battery.enabled</b> -> false</dt>
+                    <dd>Blocks sending battery level information</dd>
+                    <dt><b>extensions.pocket.enabled</b>->false</dt>
+                    <dd>Disables the Pocket feature</dd>
+                    <dt><b>browser.newtabpage.activity-stream.section.highlights.includePocket</b> -> false</dt>
+                    <dd>This disables the Firefox pocket feature</dd>
+                    <dt><b>browser.newtabpage.activity-stream.feeds.telemetry</b> -> false</dt>
+                    <dd>Disables the telemetry in Firefox</dd>
+                    <dt><b>toolkit.telemetry.server</b> -> Delete the URL</dt>
+                    <dd>Removes additional telemetry</dd>
+                    <dt><b>toolkit.telemetry.unified</b> -> false</dt>
+                    <dd>Additional telemetry removal</dd>
+                    <dt><b>media.autoplay.default </b> -> 5</dt>
+                    <dd>Disables audio and video from playing automatically</dd>
+                    <dt><b>dom.webnotifications.enabled</b> -> false</dt>
+                    <dd>Disables embedded notifications</dd>
+                    <dt><b>privacy.resistFingerprinting</b> -> true</dt>
+                    <dd>Disables some fingerprinting</dd>
+                    <dt><b>webgl.disabled</b> -> true</dt>
+                    <dd>Disables some fingerprinting</dd>
+                    <dt><b>network.http.sendRefererHeader</b> -> 0</dt>
+                    <dd>Disables referring website notifications (BREAKS SOME SITES)</dd>
+                    <dt><b>identity.fxaccounts.enabled</b> -> false</dt>
+                    <dd>Disables any embedded Firefox accounts</dd>
+                    <dt><b>beacon.enabled</b> -> false</dt>
+                    <dd>Disables data being sent to servers when leaving pages</dd>
+                    <dt><b>browser.cache.disk.enable </b> -> false</dt>
+                    <dd>Disk cache is not used by Firefox</dd>
+                    <dt><b>browser.cache.disk_cache_ssl</b> -> false</dt>
+                    <dd>Firefox will not cache https website contents.</dd>
+                    <dt><b>geo.provider.network.url</b> -> 127.0.0.1</dt>
+                    <dd>The data provider used to power Firefox's geolocation feature</dd>
+                    <dt><b>network.cookie.lifetimePolicy</b> -> 2</dt>
+                    <dd>The cookie expires at the end of the session (when the browser closes).</dd>
+                    <dt><b>pdfjs.disabled</b> -> true</dt>
+                    <dd>Disable JavaScript for PDF view</dd>
+                </ul>
+            </dt>
+        </dl>
+        <h2>Firefox Extensions</h2>
+        <dl>
+            <dt>uBlock Origin</dt>
+            <dd>free and open source ad-blocker</dd>
+            <dt>LocalCDN</dt>
+            <dd>emulates CDNs to improve online privacy</dd>
+            <dt>Popup Blocker (strict)</dt>
+            <dd>asks you for permission before you get redirected to another site</dd>
+            <dt>CleanURLs</dt>
+            <dd>removes tracking elements from URLs</dd>
+            <dt>CanvasBlocker</dt>
+            <dd>Modifies JavaScript to prevent fingerprinting</dd>
+        </dl>
       </div>
     </div>
   </article>
