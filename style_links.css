@@ -465,3 +465,8 @@ body {
 .strip__inner-text > p {
   font-size: 18px;
 }
+
+.strip__inner-text > dl {
+  font-size: 18px;
+}
+
