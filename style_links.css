@@ -460,6 +460,7 @@ body {
   overflow-y:scroll;
   height:700px;
   display:block;
+  text-align:left;
 }
 .strip__inner-text > p {
   font-size: 18px;
