@@ -455,3 +455,12 @@ body {
   line-height: 1.4;
   word-spacing: 100vw;
 }
+
+.strip__inner-text {
+  overflow-y:scroll;
+  height:700px;
+  display:block;
+}
+.strip__inner-text > p {
+  font-size: 18px;
+}
