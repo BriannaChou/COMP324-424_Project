@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-
+<!--template from https://alexanderle.com/create-an-rss-feed-from-scratch-->
 <channel>
    <title>Web Detective</title>
    <description>Updates to the Web Detective Blog</description>
