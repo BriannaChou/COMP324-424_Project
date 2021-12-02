@@ -5,10 +5,14 @@
    <title>Web Detective</title>
    <description>Updates to the Web Detective Blog</description>
    <link>https://briannachou.github.io/COMP324-424_Project/</link>
+   <atom:link href="https://briannachou.github.io/COMP324-424_Project/rss_feed.xml"
+     rel="self" type="application/rss+xml" />
 
     <item>
-        <title>Create An RSS Feed From Scratch</title>
-        <link>http://alexanderle.com/blog/create-an-rss-feed.html</link>
+        <title>Blog 1 for test</title>
+        <link>https://briannachou.github.io/COMP324-424_Project/blog1.html</link>
+        <guid>https://briannachou.github.io/COMP324-424_Project/blog1.html</guid>
+        <pubDate>Thu, 2 Dec 2021 00:00:00 CST</pubDate>
     </item>
 
 </channel>
