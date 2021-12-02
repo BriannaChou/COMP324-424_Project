@@ -15,5 +15,12 @@
         <pubDate>Thu, 2 Dec 2021 00:00:00 CST</pubDate>
     </item>
 
+    <item>
+        <title>Blog 2 for test</title>
+        <link>https://briannachou.github.io/COMP324-424_Project/blog2.html</link>
+        <guid>https://briannachou.github.io/COMP324-424_Project/blog2.html</guid>
+        <pubDate>Thu, 2 Dec 2021 00:00:00 CST</pubDate>
+    </item>
+
 </channel>
 </rss>
