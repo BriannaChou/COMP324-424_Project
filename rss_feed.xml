@@ -9,14 +9,14 @@
      rel="self" type="application/rss+xml" />
 
     <item>
-        <title>Blog 1 for test</title>
+        <title>RSS Feed working!</title>
         <link>https://briannachou.github.io/COMP324-424_Project/blog1.html</link>
         <guid>https://briannachou.github.io/COMP324-424_Project/blog1.html</guid>
         <pubDate>Thu, 2 Dec 2021 00:00:00 CST</pubDate>
     </item>
 
     <item>
-        <title>Blog 2 for test</title>
+        <title>Updated the Links Page!</title>
         <link>https://briannachou.github.io/COMP324-424_Project/blog2.html</link>
         <guid>https://briannachou.github.io/COMP324-424_Project/blog2.html</guid>
         <pubDate>Thu, 2 Dec 2021 00:00:00 CST</pubDate>
