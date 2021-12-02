@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 
-<-- channel goes here -->
+<channel>
+   <title>Web Detective</title>
+   <description>Updates to the Web Detective Blog</description>
+   <link>https://briannachou.github.io/COMP324-424_Project/</link>
 
+    <item>
+        <title>Create An RSS Feed From Scratch</title>
+        <link>http://alexanderle.com/blog/create-an-rss-feed.html</link>
+    </item>
+
+</channel>
 </rss>
