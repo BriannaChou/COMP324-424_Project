@@ -485,8 +485,9 @@ body {
   font-size:300%;
 }
 /* .login-header h1 {
-   text-shadow: 0px 5px 15px #000; */
-}
+   text-shadow: 0px 5px 15px #000; 
+  }
+  */
 .login-form {
   border:.5px solid #fff;
   background:#4facff;
@@ -558,4 +559,11 @@ body {
   .login-button {
     margin-bottom:10px;
   }
+}
+
+.testeroo {
+  background-image: url(/assets/rss.png);
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding-top:68px;
 }
