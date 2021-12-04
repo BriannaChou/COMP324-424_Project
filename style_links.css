@@ -462,16 +462,21 @@ body {
   display:block;
   text-align:left;
 }
-.strip__inner-text > p {
+.strip__inner-text p {
   font-size: 18px;
 }
 
-.strip__inner-text > dl {
+.strip__inner-text dl {
   font-size: 18px;
 }
 
-.strip__inner-text > dt {
+.strip__inner-text dt {
   font-size: 20px;
+}
+
+.strip__inner-text dd {
+  font-size: 20px;
+  text-indent: 50px;
 }
 
 /*LOGIN and REGISTER SECTION*/
