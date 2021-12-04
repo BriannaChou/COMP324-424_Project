@@ -313,6 +313,11 @@ p {
 table {
   width:90%;
 }
+
+table tr:nth-child(odd){
+  background-color:#0e2433;
+}
+
 tr {
   width:30%;
   position:relative;
@@ -337,6 +342,7 @@ table {
   display:block;
 }
 td {
+  padding: 10px;
   font-size: 17px;
 }
 
