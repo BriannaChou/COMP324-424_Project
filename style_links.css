@@ -333,7 +333,7 @@ tr .content {
 
 table {
   overflow-y:scroll;
-  /*height:400px;*/
+  height:500px;
   display:block;
 }
 td {
