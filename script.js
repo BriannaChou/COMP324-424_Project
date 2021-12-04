@@ -57,6 +57,31 @@ $(".login-button , .no-access").click(function () {
 	$(".error-page").slideDown(1000);
 });
 
+var usernames = [
+	'userjalan',
+	'userbrianna',
+	'userharris'
+];
+
+var passwords = [
+	'password',
+	'password123',
+	'passw0rd'
+];
+
+var username = 'userjalan';
+var password = 'password'
+
+for (var i = 0; i < username.length, i++) {
+	if (username == usernames[i] && password == passwords[i]) {
+		alert('Successful!');
+		break;
+	} else {
+		alert('Failed!')
+	}
+}
+
+
 $(".try-again").click(function () {
 	$(".error-page").hide(0);
 	$(".login").slideDown(1000);
