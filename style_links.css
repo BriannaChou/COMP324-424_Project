@@ -591,3 +591,8 @@ body {
   background-position: left top;
   padding-top:68px;
 }
+
+#blog {
+  background-color:#008CFF;
+  text-align: center;
+}
