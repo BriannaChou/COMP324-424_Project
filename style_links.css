@@ -347,7 +347,7 @@ tr .content {
 }
 
 table {
-  overflow-y:scroll;
+  overflow-y:visible;
   height:95%;
   display:block;
 }
