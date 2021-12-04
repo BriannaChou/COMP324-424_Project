@@ -458,7 +458,8 @@ body {
 
 .strip__inner-text {
   overflow-y:scroll;
-  height: auto;
+  height: 1000px;
+  width: 1080;
   display:block;
   text-align:left;
 }
