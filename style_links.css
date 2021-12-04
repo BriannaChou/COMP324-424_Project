@@ -314,8 +314,18 @@ table {
   width:90%;
 }
 
+th {
+  padding: 10px;
+  font-size: 17px;
+  font-style: italic;
+}
+
 table tr:nth-child(odd){
   background-color:#0e2433;
+}
+
+table tr:nth-child(even){
+  background-color:#19405a;
 }
 
 tr {
