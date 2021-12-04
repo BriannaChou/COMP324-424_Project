@@ -348,7 +348,7 @@ tr .content {
 
 table {
   overflow-y:scroll;
-  height:700px;
+  height:90%;
   display:block;
 }
 td {
@@ -474,7 +474,7 @@ body {
 
 .strip__inner-text {
   overflow-y:scroll;
-  height: 90%;
+  height: 95%;
   width: 100%;
   display:block;
   text-align:left;
