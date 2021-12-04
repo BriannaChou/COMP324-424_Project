@@ -273,12 +273,11 @@
             </div>
             <div class="login-form">
               <h3>Username:</h3>
-              <input type="text" placeholder="Username" /><br>
+              <tr><td>Username*: </td><td><input type="username*" name="username" required></td></tr>
               <h3>Password:</h3>
-              <input type="password" placeholder="Password" />
-              <br>
-              <input type="button" value="Login" class="login-button" />
-              <br>
+              <tr><td>Password*: </td><td><input type="password*" name="password" required></td></tr>
+              <tr><td><input type="submit" name="signin" onclick="loadpage()"</td></tr>
+              
               <a class="sign-up">Sign Up!</a>
               <br>
               <h6 class="no-access">Can't access your account?</h6>
