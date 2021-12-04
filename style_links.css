@@ -595,4 +595,7 @@ body {
 #blog {
   background-color:#008CFF;
   text-align: center;
+  font-family: Arial;
+  padding: 100px;
+  margin-top: 20px;
 }
