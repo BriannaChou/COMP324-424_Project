@@ -483,6 +483,10 @@ body {
 #test {
   overflow-y:scroll;
 }
+
+#main_table {
+  overflow-y:scroll;
+}
 .strip__inner-text p {
   font-size: 18px;
 }
