@@ -57,7 +57,7 @@ $(".login-button , .no-access").click(function () {
 	$(".error-page").slideDown(1000);
 });
 
-var usernames = [
+/*var usernames = [
 	'userjalan',
 	'userbrianna',
 	'userharris'
@@ -81,7 +81,7 @@ for (var i = 0; i < username.length, i++) {
 	}
 }
 
-
+*/
 $(".try-again").click(function () {
 	$(".error-page").hide(0);
 	$(".login").slideDown(1000);
