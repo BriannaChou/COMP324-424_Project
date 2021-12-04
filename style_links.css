@@ -473,11 +473,15 @@ body {
 }
 
 .strip__inner-text {
-  overflow-y:scroll;
+  overflow-y:visible;
   height: 95%;
   width: 100%;
   display:block;
   text-align:left;
+}
+
+#test {
+  overflow-y:scroll;
 }
 .strip__inner-text p {
   font-size: 18px;
