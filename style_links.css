@@ -458,8 +458,8 @@ body {
 
 .strip__inner-text {
   overflow-y:scroll;
-  height: 60%;
-  width: 1080;
+  height: 1000px;
+  width: 1080px;
   display:block;
   text-align:left;
 }
