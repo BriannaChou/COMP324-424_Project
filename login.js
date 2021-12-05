@@ -36,7 +36,7 @@ function loadpage() {
 	var password = 'password';
 	
 	for (var i = 0; i < username.length; i++) {
-		if (username == usernames[i] && password == passwords[i]) {
+		if (username === usernames[i] && password === passwords[i]) {
 			alert('Successful!');
 			break;
 		} else {
