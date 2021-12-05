@@ -34,11 +34,13 @@ function loadpage() {
 	];
 	var username = 'userjalan';
 	var password = 'password';
+	var username = document.getElementById("user").value;
+	var password = document.getElementById("pass").value;
 	
 	for (var i = 0; i < username.length; i++) {
-		if (username === usernames[i] && password === passwords[i]) {
+		if (username == usernames[i] && password == passwords[i]) {
 			alert('Successful!');
-			
+			break;
 		} else {
 			alert('Failed!')
 		}
