@@ -32,8 +32,8 @@ function loadpage() {
 		'password123',
 		'passw0rd'
 	];
-	var username = 'userjalan';
-	var password = 'password';
+	//var username = 'userjalan';
+	//var password = 'password';
 	var username = document.getElementById("user").value;
 	var password = document.getElementById("pass").value;
 	
