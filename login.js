@@ -43,6 +43,7 @@ function loadpage() {
 			break;
 		} else {
 			alert('Failed!')
+			break;
 		}
 	}
 }
