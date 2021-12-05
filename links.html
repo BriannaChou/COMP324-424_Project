@@ -280,12 +280,13 @@
               <h1>Login</h1>
             </div>
             <div class="login-form">
+              <script src="login.js"> </script> 
               <h3>Username:</h3>
-              <input type="text" placeholder="Username" /><br>
+              <input id="user" type="text" placeholder="Username" /><br>
               <h3>Password:</h3>
-              <input type="password" placeholder="Password" />
+              <input id="pass" type="password" placeholder="Password" />
               <br>
-              <input type="button" value="Login" class="login-button" />
+              <input type="submit" value="Login" class="login-button" onclick="loadpage()" />
               <br>
               <a class="sign-up">Sign Up!</a>
               <br>
@@ -295,13 +296,6 @@
           <div class="error-page">
             <div class="try-again">Error: Try again?</div>
           </div>
-          <form>
-            <script src="login.js"> </script>  
-            <tr><td><h2>Sign in</h2></td></tr>
-            <tr><td>Username*: </td><td><input id="user" type="username*" name="username" required></td></tr>
-            <tr><td>Password*: </td><td><input id="pass" type="password*" name="password" required></td></tr>
-            <tr><td><input type="submit" name="signin" onclick="loadpage()"</td></tr>
-            </form>
           </div>
         </div>
       </body>
