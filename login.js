@@ -38,7 +38,7 @@ function loadpage() {
 	for (var i = 0; i < username.length; i++) {
 		if (username === usernames[i] && password === passwords[i]) {
 			alert('Successful!');
-			break;
+			
 		} else {
 			alert('Failed!')
 		}
