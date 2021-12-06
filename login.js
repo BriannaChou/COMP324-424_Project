@@ -42,7 +42,7 @@ function loadpage() {
 			alert('Successful!');
 			break;
 		} else {
-			alert('Failed!')
+			//alert('Failed!')
 			break;
 		}
 	}
