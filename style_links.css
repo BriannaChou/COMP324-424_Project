@@ -202,6 +202,10 @@
   opacity: 1;
 }
 
+.strip__inner-text #table_header {
+  background-color: inherit;
+}
+
 @-webkit-keyframes strip1 {
   0% {
     transform: translate3d(-100%, 0, 0);
@@ -493,6 +497,14 @@ body {
   padding: 5px;
   border-radius: 10px;
 }
+
+.strip__inner-text h3{
+  background-color:#0e2433;
+  padding: 5px;
+  border-radius: 10px;
+  font-size:20px;
+}
+
 .strip__inner-text p {
   font-size: 18px;
 }
