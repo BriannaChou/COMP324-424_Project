@@ -605,3 +605,9 @@ body {
   padding: 100px;
   margin-top: 20px;
 }
+
+.explanation {
+  background-color:#0e2433;
+  padding: 5px;
+  border-radius: 10px;
+}
