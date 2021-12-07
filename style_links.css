@@ -618,3 +618,14 @@ body {
   margin-top: 20px;
 }
 
+div.links_cyber > li{
+	background: rgba(0,0,0,0.1);
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 0 0.5rem 0.5rem 0.5rem;
+  counter-increment: gradient-counter;
+  margin-top: 1rem;
+  min-height: 3rem;
+  padding: 1rem 1rem 1rem 3rem;
+  position: relative;
+}
