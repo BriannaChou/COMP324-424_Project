@@ -629,3 +629,7 @@ div.links_cyber > li{
   padding: 1rem 1rem 1rem 3rem;
   position: relative;
 }
+
+.links_cyber ol:nth-child(odd){
+  font-size:20px;
+}
