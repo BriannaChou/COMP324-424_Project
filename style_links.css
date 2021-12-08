@@ -314,6 +314,10 @@ p {
   margin: 0 0 16px;
 }
 
+#author_specific {
+  background-color:inherit;
+}
+
 table {
   width:90%;
 }
@@ -540,6 +544,7 @@ body {
   text-align:left;
   margin-left:40px;
   color:#fff;
+  background-color:inherit;
 }
 .login-form {
   box-sizing:border-box;
