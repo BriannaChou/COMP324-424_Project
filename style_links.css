@@ -632,4 +632,5 @@ div.links_cyber > li{
 
 .links_cyber ol:nth-child(odd){
   font-size:20px;
+  color: #f2f2f2;
 }
