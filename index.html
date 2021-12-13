@@ -1,138 +1,393 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link href="style.css" rel="stylesheet">
-        <title>Web Detective</title> <!--Still have to update the Title-->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing-api.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    </head>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Web Detective</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style_links.css">
+
+</head>
 <body>
-    <!---
-    <header>
-        <h1> Web Detective </h1>
-        <img alt="Small image of our logo" src="small_logo.png">
-        <nav>
+<!-- partial:index.partial.html -->
+
+<!--BROWSER INFO SECTION-->
+<section class="strips">
+  <article class="strips__strip">
+    <div class="strip__content">
+      <h1 class="strip__title" data-name="Lorem">Browser   Info</h1>
+      <div class="strip__inner-text">
+        <h2 id="table_header">Browser Info</h2>
+        <br>
+        <table class="styled-table" id="main_table">
+          <thead>
+          <tr>
+              <th id="type">Type</th>
+              <th id="value">Value</th>
+              <th><button class="btn" type="button" name="button" onclick="downloadFile()">XML</button></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <td>TimeZone</td>
+              <td id="timezone"></td>
+          </tr>
+          <tr>
+              <td>Browser Details</td>
+              <td id="broswer_details"></td>
+          </tr>
+          <tr>
+              <td>Screen Size</td>
+              <td id="screen_size"></td>
+          </tr>
+          <tr>
+              <td>Viewport of Screen</td>
+              <td id="viewport"></td>
+          </tr>
+          <tr>
+              <td>Color Depth</td>
+              <td id="color_depth"></td>
+          </tr>
+          <tr>
+              <td>Pixel Depth</td>
+              <td id="pixel_depth"></td>
+          </tr>
+          <tr>
+              <td>Orientation</td>
+              <td id="orientation"></td>
+          </tr>
+          <tr>
+              <td>Date & Time</td>
+              <td id="date_time"></td>
+          </tr>
+          <tr>
+              <td>Access to Audio and Video</td>
+              <td id="a_v"></td>
+          </tr>
+          <tr>
+              <td>Clipboard</td>
+              <td><p id="textSpace"><button id="btn">Click here to show the copied text in the paragraph</button></p><td>
+          </tr>
+          <tr>
+              <td>Mouse Tracking</td>
+              <td id="X"></td>
+          </tr>
+          <tr>
+              <td>IP Address</td>
+              <td><pre id="ipaddress"></pre></td>
+          </tr>
+          <tr>
+              <td>CPU Cores being used</td>
+              <td id=cpu></td>
+          </tr>
+          <tr>
+              <td>RAM being used</td>
+              <td id=ram></td>
+          </tr>
+          <tr>
+              <td>GPU</td>
+              <td id=gpu></td>
+          </tr>
+          <tr>
+              <td>Network Type</td>
+              <td id=network></td>
+          </tr>
+          <tr>
+              <td>Device Type</td>
+              <td id=device></td>
+          </tr>
+          <tr>
+              <td><p>IP Address <br> City <br> State <br> Postal Code <br> Country <br> Continent <br> Continent Code <br> Longitude <br> Latitude <br>
+              Is this a VPN? <br> Timezone Name <br> Flag Emoji <br> Currency Name <br> Connection Type <br> ISP Name <br> Organization Name
+              </p>
+              </td> 
+              <td id=location></td>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+          </tr>
+          <!--tr>
+              <td>testing</td>
+              <td id=xml_output></td>
+          </tr-->
+          </tbody>
+      </table>
+      <script type="text/javascript" src="leak_script.js"></script>
+      </div>
+      
+    </div>
+  </article>
+
+  <!--HARDENING SECTION-->
+  <article class="strips__strip">
+    <div class="strip__content">
+      <h1 class="strip__title" data-name="Ipsum">Hardening</h1>
+      <div class="strip__inner-text" id="test">
+        <h2>Browser Hardening</h2>
+        <p><cite>"Hardening is a process whereby a computer is made more resistant to cyber intrusion from malicious attack and from accidental infection.</cite> <a href="https://www.controleng.com/articles/six-steps-to-improve-computer-hardening/">[link]</a>"  This is a great definition of what hardening is.
+            However the goals for this website are for hardening a browser to make it more private, which would allow it to be more secure.
+        </p>
+        <div class="explanation">
+          <h2>Importance of your data</h2> <!--INPUT HARIS INPUT HARIS!!!!!!!--> 
+          <p>We live in an age where data is a commodity. Whenever you visit a website, they have information regarding your browser and location (through IP address).
+            A website does not need all of that content in order to load a page, however we allow ourselves to give them that information. This is what our project is about:
+            showing people how much information is gathered from their browser to give them an understanding at what data is being shown. The importance of this data is that it
+            can be used maliciously. Think about it like this, are you comfortable with someone watching you through your window? This is the digital version of that analogy.
+            We give companies the power to watch what we are doing on a website, and then sell that information to other companies.
+          </p>
+        </div>
+        <h2>Recommendations for Firefox</h2>
+        <h3>General Section:</h3>
+        <dl>
+            <dt>Uncheck <b>Restore previous session</b></dt>
+            <dd>- If you use a VPN and your connection goes down, then when Firefox loads up again, the website can potentially know your IP if you restore the page and are not using the VPN.</dd>
+        </dl> 
+        <h3>Home Section:</h3>
+        <dl>
+            <dt>Set <b>Homepage and new windows</b> to <b>Blank Page</b></dt>
+            <dd>- one less connection when you boot up the browser</dd>
+            <dt>Set <b>New Tab</b> to <b>Blank Page</b></dt>
+            <dd>- These will prevent Firefox from spawning their own sites when you need a new page/tab.</dd>
+            <dt>Uncheck everything under <b>Firefox Home Content</b> (Shortcuts, Recommended by Pocket, Recent activity, Snippets)</dt>
+            <dd>- This will prevent Firefox from loading their own content</dd>
+        </dl>
+        <h3>Search Section</h3>
+        <dl>
+            <dt>Change <b>Default Search Engine</b> to <b>DuckDuckGo</b></dt>
+            <dd>- DuckDuckGo is one of the more privacy-centric browsers (searx is a good alternative as well)</dd>
+            <dt>Uncheck <b>Provide Suggestions</b></dt>
+            <dd>- Prevents the queries from going to the Google API</dd>
+        </dl>
+        <h3>Privacy & Security</h3>
+        <dl>
+            <dt>Under <b>Cookies and Site Data</b>, check <b>Delete cookies and site data when Firefox is closed</b></dt>
+            <dd>- next time the you visit the same website, the website will not be able to read the previous sessions cookies, since there none.</dd>
+            <dt>Under <b>Logins and Passwords</b>, uncheck the boxes (with the inside list first): </dt>
             <ul>
-                <li><a href="index.html">Code</a></li>
-                <li><a href="preventing.html">Prevent Browser Leaks</a></li>
-                <li><a href="authors.html">Authors</a></li>
+                <li><b>Show alerts about passwords for breached websites</b></li>
+                <li><b>Suggest and generate strong passwords</b></li>
+                <li><b>Autofill logins and passwords</b></li>
+                <li><b>Ask to save logins and passwords for websites</b></li>
             </ul>
-        </nav>
-    </header>
--->
-    <!-- <hr>
-    <button type="button">Code</button> 
-    <button type="button">Prevent Browser Leaks!</button> name could be better
-    <button type="button">Authors</button> name update for this?
-    <hr>-->
-    <noscript>Your browser does not support JavaScript!</noscript> 
-    <!--https://www.w3schools.com/howto/howto_css_navbar_image.asp-->
-    <div class="bg-img">
-        <div class="top-left"><canvas id="myCanvas"></canvas></div> <!--https://codepen.io/birjolaxew/pen/Fdbws-->
-        <div class="container">
-          <div class="topnav">
-            <a href="#login">Login / Register</a>
-            <a href="#home">Home</a>
-            <a href="/COMP324-424_Project/preventing.html">Browser Hardening</a>
-            <a href="/COMP324-424_Project/links.html">Helpful Links</a>
-            <a href="/COMP324-424_Project/authors.html">Authors</a>
+            <dt>Under <b>History</b>, in the dropdown choose Firefox will <b>Use custom settings for history</b></dt>
+            <ul>
+                <li>uncheck <b>Remember search and form history, and Remember browsing and download history</b></li>
+                <li>Check <b>Clear history when Firefox closes</b></li>
+                <li><b>DO NOT</b> check the box next to <b>Always use private browsing mode</b> <li>- this will break Firefox containers</li></li>
+            </ul>
+            <dt>Under <b>Address Bar</b>, only have <b>Bookmarks </b> and <b>Open tabs </b> showing up</dt>
+            <dt>Under <b>Permissions</b>, click <b>Settings...</b> next to each <b>Location, Camera, Microphone,</b> and <b> Notifications.</b> In the popup, check the "<b>Block new requests..</b>" box on the bottom</dt>
+            <dt>Under <b>Firefox Data Collection and Use</b>, and uncheck everything</dt>
+            <dt>Under <b>Security</b>, uncheck everything</dt>
+            <dt>Under <b>HTTPS-Only Mode</b> best practice would be to use <b>Enable HTTPS-Only Mode in all windows</b>.</dt>
+            <dt>These are the settings when you enter <b>about:config</b> in the search bar:
+                <ul>
+                    <dt><b>geo.enabled</b> -> false</dt>
+                    <dd>Disables firefox from sharing your location</dd>
+                    <dt><b>browser.safebrowsing.malware.enabled</b> -> false</dt>
+                    <dd>Disables Google's ability to monitor your web traffic for malware</dd>
+                    <dt><b>dom.battery.enabled</b> -> false</dt>
+                    <dd>Blocks sending battery level information</dd>
+                    <dt><b>extensions.pocket.enabled</b>->false</dt>
+                    <dd>Disables the Pocket feature</dd>
+                    <dt><b>browser.newtabpage.activity-stream.section.highlights.includePocket</b> -> false</dt>
+                    <dd>This disables the Firefox pocket feature</dd>
+                    <dt><b>browser.newtabpage.activity-stream.feeds.telemetry</b> -> false</dt>
+                    <dd>Disables the telemetry in Firefox</dd>
+                    <dt><b>toolkit.telemetry.server</b> -> Delete the URL</dt>
+                    <dd>Removes additional telemetry</dd>
+                    <dt><b>toolkit.telemetry.unified</b> -> false</dt>
+                    <dd>Additional telemetry removal</dd>
+                    <dt><b>media.autoplay.default </b> -> 5</dt>
+                    <dd>Disables audio and video from playing automatically</dd>
+                    <dt><b>dom.webnotifications.enabled</b> -> false</dt>
+                    <dd>Disables embedded notifications</dd>
+                    <dt><b>privacy.resistFingerprinting</b> -> true</dt>
+                    <dd>Disables some fingerprinting</dd>
+                    <dt><b>webgl.disabled</b> -> true</dt>
+                    <dd>Disables some fingerprinting</dd>
+                    <dt><b>network.http.sendRefererHeader</b> -> 0</dt>
+                    <dd>Disables referring website notifications (BREAKS SOME SITES)</dd>
+                    <dt><b>identity.fxaccounts.enabled</b> -> false</dt>
+                    <dd>Disables any embedded Firefox accounts</dd>
+                    <dt><b>beacon.enabled</b> -> false</dt>
+                    <dd>Disables data being sent to servers when leaving pages</dd>
+                    <dt><b>browser.cache.disk.enable </b> -> false</dt>
+                    <dd>Disk cache is not used by Firefox</dd>
+                    <dt><b>browser.cache.disk_cache_ssl</b> -> false</dt>
+                    <dd>Firefox will not cache https website contents.</dd>
+                    <dt><b>geo.provider.network.url</b> -> 127.0.0.1</dt>
+                    <dd>The data provider used to power Firefox's geolocation feature</dd>
+                    <dt><b>network.cookie.lifetimePolicy</b> -> 2</dt>
+                    <dd>The cookie expires at the end of the session (when the browser closes).</dd>
+                    <dt><b>pdfjs.disabled</b> -> true</dt>
+                    <dd>Disable JavaScript for PDF view</dd>
+                </ul>
+            </dt>
+        </dl>
+        <h2>Firefox Extensions</h2>
+        <dl>
+            <dt>uBlock Origin</dt>
+            <dd>free and open source ad-blocker</dd>
+            <dt>LocalCDN</dt>
+            <dd>emulates CDNs to improve online privacy</dd>
+            <dt>Popup Blocker (strict)</dt>
+            <dd>asks you for permission before you get redirected to another site</dd>
+            <dt>CleanURLs</dt>
+            <dd>removes tracking elements from URLs</dd>
+            <dt>CanvasBlocker</dt>
+            <dd>Modifies JavaScript to prevent fingerprinting</dd>
+        </dl>
+      </div>
+    </div>
+  </article>
+
+  <!--RSS FEED AND LINKS SECTION-->
+  <article class="strips__strip">
+    <div class="strip__content">
+      <h1 class="strip__title" data-name="Dolor">RSS / Links</h1>
+        <div class="strip__inner-text">
+          <h2>RSS Feed</h2>
+          <p>All of our updates are on RSS now!</p>
+          <p>
+            <a href="https://validator.w3.org/feed/check.cgi?url=https%3A//briannachou.github.io/COMP324-424_Project/rss_feed.xml" target = "_self"><img src="./images/valid-rss-rogers.png" alt="[Valid RSS]" width="100" height="40"/></a>
+            <a href="https://briannachou.github.io/COMP324-424_Project/rss_feed.xml" target = "_self"><img src="./images/rss.png" alt="RSS Feed" width="40" height="40"/></a>
+          </p>
+          <h2>Helpful Links (Cybersecurity Blogs and Podcasts)</h2>
+            <div class="links_cyber">
+              <style>
+                
+                a:link {
+                  color: white;
+                  background-color: transparent;
+                  text-decoration: none;
+                  font-size: 20px;
+                }
+                
+                a:visited {
+                  color: pink;
+                  background-color: transparent;
+                  text-decoration: none;
+                  font-size: 20px;
+                }
+                
+                a:hover {
+                  color: red;
+                  background-color: transparent;
+                  text-decoration: underline;
+                  font-size: 20px;
+                }
+                
+                a:active {
+                  color: yellow;
+                  background-color: transparent;
+                  text-decoration: underline;
+                  font-size: 20px;
+                }
+                </style>
+                <ol>
+                <li><a href="https://www.zdnet.com/blog/security/" title="Go to Zero Day Blog"> Check out Zero Day</a></li>
+                <br>
+                <li><a href="https://informationsecuritybuzz.com" title="Go to Zero Day Blog"> Check out Information Security Buzz</a></li>
+                <br>
+                <li><a href="https://grahamcluley.com" title="Go to Zero Day Blog"> Check out Cybersecurity Expert Graham Cluley</a></li>
+                <br>
+                <li><a href="https://thehackernews.com" title="Go to Zero Day Blog"> Check out The Hacker News Blog</a></li>
+                <br>
+                <li><a href="https://www.lastwatchdog.com" title="Go to Zero Day Blog"> Check out Last Watch Dog</a></li>
+                <br>
+                <li><a href="https://threatpost.com" title="Go to Zero Day Blog"> Check out Threat Post</a></li>
+                <br>
+                <li><a href="https://www.infosecurity-magazine.com" title="Go to Zero Day Blog"> Check out Infosecurity Magazine</a></li>
+                <br>
+                <li><a href="https://insidecybersecurity.com" title="Go to Zero Day Blog"> Check out Inside Cybersecurity</a></li>
+                <br>
+                <li><a href="https://www.cyberark.com/resources/blog" title="Go to Zero Day Blog"> Check out CyberArk</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+  </article>
+
+  <!-- LOGIN SECTION-->
+  <article class="strips__strip">
+    <div class="strip__content">
+      <h1 class="strip__title" data-name="Sit">Login</h1>
+      <div class="strip__inner-text">
+          <link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel='stylesheet' type='text/css'>
+
+          <div class="login">
+            <div class="login-header">
+              <h1>Login</h1>
+            </div>
+            <div class="login-form">
+              <script src="login.js"> </script> 
+              <h3>Username:</h3>
+              <input id="user" type="text" placeholder="Username" /><br>
+              <h3>Password:</h3>
+              <input id="pass" type="password" placeholder="Password" />
+              <br>
+              <input type="submit" value="Login" class="login-button" onclick="loadpage()" />
+              <br>
+              <a class="sign-up">Sign Up!</a>
+              <br>
+              <h6 class="no-access">Can't access your account?</h6>
+            </div>
+          </div>
+          <div class="error-page">
+            <div class="try-again">Error: Try again?</div>
+          </div>
           </div>
         </div>
+      </body>
+    </div>
+  </div>
+  </article>
+
+  <!--AUTHORS SECTION-->
+  <article class="strips__strip">
+    <div class="strip__content">
+      <h1 class="strip__title" data-name="Amet">Authors</h1>
+      <div class="strip__inner-text">
+        <h2 id="author_specific">Authors</h2>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <section class="hero-section">
+  <div class="card-grid">
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(./images/brianna.png)"></div>
+      <div class="card__content">
+        <h3 class="card__heading" id="author_specific">Brianna</h3>
+        <p class="card__category">Design and UX/UI Developer</p>
       </div>
-    <!--img src="assets/adi-goldstein-EUsVwEOsblE-unsplash.jpg" alt="Background"-->
-    <table class=styled-table id=main_table>
-        <thead>
-        <caption>Browser Information</caption>
-        <tr>
-            <th id="type">Type</th>
-            <th id="value">Value</th>
-            <th><button class="btn" type="button" name="button" onclick="downloadFile()">Download XML</button></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>TimeZone</td>
-            <td id="timezone"></td>
-        </tr>
-        <tr>
-            <td>Browser Details</td>
-            <td id="broswer_details"></td>
-        </tr>
-        <tr>
-            <td>Screen Size</td>
-            <td id="screen_size"></td>
-        </tr>
-        <tr>
-            <td>Viewport of Screen</td>
-            <td id="viewport"></td>
-        </tr>
-        <tr>
-            <td>Color Depth</td>
-            <td id="color_depth"></td>
-        </tr>
-        <tr>
-            <td>Pixel Depth</td>
-            <td id="pixel_depth"></td>
-        </tr>
-        <tr>
-            <td>Orientation</td>
-            <td id="orientation"></td>
-        </tr>
-        <tr>
-            <td>Date & Time</td>
-            <td id="date_time"></td>
-        </tr>
-        <tr>
-            <td>Access to Audio and Video</td>
-            <td id="a_v"></td>
-        </tr>
-        <tr>
-            <td>Clipboard</td>
-            <td><p id="textSpace"><button id="btn">Click here to show the copied text in the paragraph</button></p><td>
-        </tr>
-        <tr>
-            <td>Mouse Tracking</td>
-            <td id="X"></td>
-        </tr>
-        <tr>
-            <td>IP Address</td>
-            <td><pre id="ipaddress"></pre></td>
-        </tr>
-        <tr>
-            <td>CPU Cores being used</td>
-            <td id=cpu></td>
-        </tr>
-        <tr>
-            <td>RAM being used</td>
-            <td id=ram></td>
-        </tr>
-        <tr>
-            <td>GPU</td>
-            <td id=gpu></td>
-        </tr>
-        <tr>
-            <td>Network Type</td>
-            <td id=network></td>
-        </tr>
-        <tr>
-            <td>Device Type</td>
-            <td id=device></td>
-        </tr>
-        <tr>
-            <td><p>IP Address <br> City <br> State <br> Postal Code <br> Country <br> Continent <br> Continent Code <br> Longitude <br> Latitude <br>
-            Is this a VPN? <br> Timezone Name <br> Flag Emoji <br> Currency Name <br> Connection Type <br> ISP Name <br> Organization Name
-            </p>
-            </td> 
-            <td id=location></td>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        </tr>
-        <!--tr>
-            <td>testing</td>
-            <td id=xml_output></td>
-        </tr-->
-        </tbody>
-    </table>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(images/testing.jpg)"></div>
+      <div class="card__content">
+        <h3 class="card__heading" id="author_specific">Haris</h3>
+        <p class="card__category">Backend Developer</p>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(images/jalan.jpg)"></div>
+      <div class="card__content">
+        <h3 class="card__heading" id="author_specific">Jalan</h3>
+        <p class="card__category">Backend Developer</p>
+      </div>
+    </li>
+      </div>
+    </a>
+    <footer>
+      <p><a href="mailto:WebDetectiveTeam@gmail.com">WebDetectiveTeam@gmail.com</a> || 1+ 555-555-5555 || Chicago, IL</p>
+    </footer>
+  <div>
+</section>
+      </div>
+    </div>
+  </article>
+  <i class="fa fa-close strip__close"></i>
+</section>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="./script.js"></script>
+
 </body>
-<script type="text/javascript" src="leak_script.js"></script>
 </html>

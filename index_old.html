@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="style.css" rel="stylesheet">
+        <title>Web Detective</title> <!--Still have to update the Title-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing-api.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    </head>
+<body>
+    <!---
+    <header>
+        <h1> Web Detective </h1>
+        <img alt="Small image of our logo" src="small_logo.png">
+        <nav>
+            <ul>
+                <li><a href="index.html">Code</a></li>
+                <li><a href="preventing.html">Prevent Browser Leaks</a></li>
+                <li><a href="authors.html">Authors</a></li>
+            </ul>
+        </nav>
+    </header>
+-->
+    <!-- <hr>
+    <button type="button">Code</button> 
+    <button type="button">Prevent Browser Leaks!</button> name could be better
+    <button type="button">Authors</button> name update for this?
+    <hr>-->
+    <noscript>Your browser does not support JavaScript!</noscript> 
+    <!--https://www.w3schools.com/howto/howto_css_navbar_image.asp-->
+    <div class="bg-img">
+        <div class="top-left"><canvas id="myCanvas"></canvas></div> <!--https://codepen.io/birjolaxew/pen/Fdbws-->
+        <div class="container">
+          <div class="topnav">
+            <a href="#login">Login / Register</a>
+            <a href="#home">Home</a>
+            <a href="/COMP324-424_Project/preventing.html">Browser Hardening</a>
+            <a href="/COMP324-424_Project/links.html">Helpful Links</a>
+            <a href="/COMP324-424_Project/authors.html">Authors</a>
+          </div>
+        </div>
+      </div>
+    <!--img src="assets/adi-goldstein-EUsVwEOsblE-unsplash.jpg" alt="Background"-->
+    <table class=styled-table id=main_table>
+        <thead>
+        <caption>Browser Information</caption>
+        <tr>
+            <th id="type">Type</th>
+            <th id="value">Value</th>
+            <th><button class="btn" type="button" name="button" onclick="downloadFile()">Download XML</button></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>TimeZone</td>
+            <td id="timezone"></td>
+        </tr>
+        <tr>
+            <td>Browser Details</td>
+            <td id="broswer_details"></td>
+        </tr>
+        <tr>
+            <td>Screen Size</td>
+            <td id="screen_size"></td>
+        </tr>
+        <tr>
+            <td>Viewport of Screen</td>
+            <td id="viewport"></td>
+        </tr>
+        <tr>
+            <td>Color Depth</td>
+            <td id="color_depth"></td>
+        </tr>
+        <tr>
+            <td>Pixel Depth</td>
+            <td id="pixel_depth"></td>
+        </tr>
+        <tr>
+            <td>Orientation</td>
+            <td id="orientation"></td>
+        </tr>
+        <tr>
+            <td>Date & Time</td>
+            <td id="date_time"></td>
+        </tr>
+        <tr>
+            <td>Access to Audio and Video</td>
+            <td id="a_v"></td>
+        </tr>
+        <tr>
+            <td>Clipboard</td>
+            <td><p id="textSpace"><button id="btn">Click here to show the copied text in the paragraph</button></p><td>
+        </tr>
+        <tr>
+            <td>Mouse Tracking</td>
+            <td id="X"></td>
+        </tr>
+        <tr>
+            <td>IP Address</td>
+            <td><pre id="ipaddress"></pre></td>
+        </tr>
+        <tr>
+            <td>CPU Cores being used</td>
+            <td id=cpu></td>
+        </tr>
+        <tr>
+            <td>RAM being used</td>
+            <td id=ram></td>
+        </tr>
+        <tr>
+            <td>GPU</td>
+            <td id=gpu></td>
+        </tr>
+        <tr>
+            <td>Network Type</td>
+            <td id=network></td>
+        </tr>
+        <tr>
+            <td>Device Type</td>
+            <td id=device></td>
+        </tr>
+        <tr>
+            <td><p>IP Address <br> City <br> State <br> Postal Code <br> Country <br> Continent <br> Continent Code <br> Longitude <br> Latitude <br>
+            Is this a VPN? <br> Timezone Name <br> Flag Emoji <br> Currency Name <br> Connection Type <br> ISP Name <br> Organization Name
+            </p>
+            </td> 
+            <td id=location></td>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        </tr>
+        <!--tr>
+            <td>testing</td>
+            <td id=xml_output></td>
+        </tr-->
+        </tbody>
+    </table>
+</body>
+<script type="text/javascript" src="leak_script.js"></script>
+</html>
