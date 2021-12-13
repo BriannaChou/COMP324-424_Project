@@ -5,9 +5,10 @@
 .strips {
   min-height: 100vh;
   text-align: center;
-  overflow: hidden;
+  overflow:scroll;
   color: white;
 }
+
 .strips__strip {
   will-change: width, left, z-index, height;
   position: absolute;
@@ -17,6 +18,7 @@
   cursor: pointer;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
 .strips__strip:nth-child(1) {
   left: 0;
 }
@@ -33,7 +35,7 @@
   left: 80vw;
 }
 .strips__strip:nth-child(1) .strip__content {
-  background: #016bb3;
+  background: #041c2a;
   transform: translate3d(-100%, 0, 0);
   -webkit-animation-name: strip1;
           animation-name: strip1;
@@ -41,7 +43,7 @@
           animation-delay: 0.1s;
 }
 .strips__strip:nth-child(2) .strip__content {
-  background: #0079bf;
+  background: #093854;
   transform: translate3d(0, 100%, 0);
   -webkit-animation-name: strip2;
           animation-name: strip2;
@@ -49,7 +51,7 @@
           animation-delay: 0.2s;
 }
 .strips__strip:nth-child(3) .strip__content {
-  background: #298fca;
+  background: #0c4b70;
   transform: translate3d(0, -100%, 0);
   -webkit-animation-name: strip3;
           animation-name: strip3;
@@ -57,7 +59,7 @@
           animation-delay: 0.3s;
 }
 .strips__strip:nth-child(4) .strip__content {
-  background: #5ba4cf;
+  background: #105e8d;
   transform: translate3d(0, 100%, 0);
   -webkit-animation-name: strip4;
           animation-name: strip4;
@@ -65,7 +67,7 @@
           animation-delay: 0.4s;
 }
 .strips__strip:nth-child(5) .strip__content {
-  background: #8bbdd9;
+  background: #1683c5;
   transform: translate3d(100%, 0, 0);
   -webkit-animation-name: strip5;
           animation-name: strip5;
@@ -206,6 +208,10 @@
   background-color: inherit;
 }
 
+.strip__inner-text .styled-table::-webkit-scrollbar {
+  display:none;
+}
+
 @-webkit-keyframes strip1 {
   0% {
     transform: translate3d(-100%, 0, 0);
@@ -296,6 +302,13 @@ body {
   line-height: 1.5;
 }
 
+footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:50px;
+}
+
 h1, h2 {
   font-weight: 300;
 }
@@ -329,11 +342,11 @@ th {
 }
 
 table tr:nth-child(odd){
-  background-color:#0e2433;
+  background-color:#113044;
 }
 
 table tr:nth-child(even){
-  background-color:#19405a;
+  background-color:#1c4a68;
 }
 
 tr {
@@ -355,7 +368,7 @@ tr .content {
 }
 
 table {
-  overflow-y:visible;
+  overflow-y:hidden;
   height:95%;
   display:block;
 }
@@ -481,11 +494,15 @@ body {
 }
 
 .strip__inner-text {
-  overflow-y:visible;
+  overflow-y:scroll;
   height: 95%;
   width: 100%;
   display:block;
   text-align:left;
+}
+
+.strip__inner-text::-webkit-scrollbar {
+  display:none;
 }
 
 #test {
