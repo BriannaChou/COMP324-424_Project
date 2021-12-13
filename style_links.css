@@ -67,7 +67,7 @@
           animation-delay: 0.4s;
 }
 .strips__strip:nth-child(5) .strip__content {
-  background: #1683c5;
+  background: #157ab9;
   transform: translate3d(100%, 0, 0);
   -webkit-animation-name: strip5;
           animation-name: strip5;
